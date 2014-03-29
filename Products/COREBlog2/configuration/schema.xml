@@ -1,0 +1,12 @@
+<schema prefix="Products.COREBlog2.configuration.datatype">
+
+  <description format="plain">
+    COREBlog2 configuration schema
+  </description>
+
+  <import package="Products.COREBlog2.configuration" />
+
+  <section type="coreblog2" name="*"
+   attribute="coreblog2" required="yes" />
+
+</schema>

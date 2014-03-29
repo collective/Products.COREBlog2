@@ -1,0 +1,191 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+<body>
+
+<metal:block fill-slot="top_slot"
+             tal:define="dummy python:request.set('disable_border',1)" />
+
+<metal:block fill-slot="sub" />
+
+<div metal:fill-slot="main">
+
+    <metal:commentform_macro define-macro="commentform">
+
+    <form name="comment_form"
+          method="post"
+          action="talkback"
+          tal:define="errors options/state/getErrors"
+          tal:attributes="action string:${here/getId}/${template/getId}">
+
+        <fieldset>
+
+            <legend i18n:translate="legend_add_comment">Add comment</legend>
+            <p i18n:translate="description_add_comment">
+                You can add a comment by filling out the form below. Plain text formatting.
+            </p>
+<!--
+            <input type="hidden" name="Creator" value=""
+                   tal:attributes="value member/getUserName" />
+-->
+        <div class="field"
+             tal:define="error errors/author|nothing;"
+             tal:attributes="class python:test(error, 'field error', 'field')">
+
+        <label for="author" i18n:translate="label_author">Author</label>
+
+        <span tal:condition="here/getComment_require_author"
+              class="fieldRequired" title="Required"
+              i18n:attributes="title title_required;"
+              i18n:translate="label_required">(Required)</span>
+
+            <div tal:content="error">Validation error output</div>
+
+                <input name="author"
+                       id="author"
+                       value=""
+                       size="40"
+                       tabindex=""
+                       tal:attributes="value request/author|member/getUserName|request/cookie/author|nothing;"/>
+
+        </div>
+
+        <div class="field"
+        tal:define="error errors/email|nothing;"
+        tal:attributes="class python:test(error, 'field error', 'field')">
+
+        <label for="email" i18n:translate="label_email">EMail</label>
+
+        <span tal:condition="here/getComment_require_email"
+              class="fieldRequired" title="Required"
+              i18n:attributes="title title_required;"
+              i18n:translate="label_required">(Required)</span>
+
+            <div tal:content="error">Validation error output</div>
+                <input name="email"
+                       id="email"
+                       value=""
+                       size="40"
+                       tabindex=""
+                       tal:attributes="value request/email|request/cookies/email|nothing" />
+
+        </div>
+
+        <div class="field"
+        tal:define="error errors/url|nothing;"
+        tal:attributes="class python:test(error, 'field error', 'field')">
+
+        <label for="url" i18n:translate="label_url">URL</label>
+
+        <span tal:condition="here/getComment_require_url"
+              class="fieldRequired" title="Required"
+              i18n:attributes="title title_required;"
+              i18n:translate="label_required">(Required)</span>
+
+            <div tal:content="error">Validation error output</div>
+
+                <input name="url"
+                       id="url"
+                       value=""
+                       size="40"
+                       tabindex=""
+                       tal:attributes="value request/url|request/cookies/url|nothing" />
+
+        </div>
+
+        <div class="field"
+        tal:define="error errors/title |nothing;"
+        tal:attributes="class python:test(error, 'field error', 'field')">
+
+        <label for="title" i18n:translate="label_title">Title</label>
+
+        <span class="fieldRequired" title="Required"
+              i18n:attributes="title title_required;"
+              i18n:translate="label_required">(Required)</span>
+
+            <div tal:content="error">Validation error output</div>
+
+                <input name="title"
+                       id="title"
+                       value=""
+                       size="40"
+                       tabindex=""
+                       tal:attributes="value request/title|string:Re:${here/title}" />
+
+            </div>
+
+        <div class="field"
+        tal:define="error errors/body|nothing;"
+        tal:attributes="class python:test(error, 'field error', 'field')">
+
+                <label for="body" i18n:translate="label_comment">Comment</label>
+
+        <span class="fieldRequired" title="Required"
+              i18n:attributes="title title_required;"
+              i18n:translate="label_required">(Required)</span>
+
+            <div tal:content="error">Validation error output</div>
+
+                <textarea name="body"
+                          id="body"
+                          cols="40"
+                          rows="8"
+                          tabindex=""
+                          tal:content="request/body|request/text_override | nothing"></textarea>
+
+            </div>
+
+            <div class="formControls">
+
+                <input type="checkbox"
+                       id="remember_cookie"
+                       name="remember_cookie" 
+                       value=""
+                       tabindex=""
+                       tal:attributes="checked python:request.form.has_key('remember_cookie');" />
+
+                <label i18n:translate="remember_info"
+                       for="remember_cookie" >Remember your info. on cookie?</label>
+
+                <br />
+
+                <input class="context"
+                       tabindex=""
+                       type="submit"
+                       value="Reset Cookie"
+                       name="form.button.reset_cookie"
+                       i18n:attributes="value label_reset_cookie;" />
+
+            </div>
+
+            <div class="formControls">
+
+                <input class="context"
+                       tabindex=""
+                       type="submit"
+                       value="Add Comment"
+                       name="form.button.Save"
+                       i18n:attributes="value label_save;"
+                       tal:attributes="name string:discussion_reply:method;" />
+
+                <input class="context"
+                       tabindex=""
+                       type="submit"
+                       value="Preview"
+                       name="form.button.preview"
+                       i18n:attributes="value label_preview;" />
+
+            </div>
+          <input type="hidden" name="form.submitted" value="1" />
+
+        </fieldset>
+
+    </form>
+
+    </metal:commentform_macro>
+
+</div>
+
+</body>
+</html>

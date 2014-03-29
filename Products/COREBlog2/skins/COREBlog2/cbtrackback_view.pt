@@ -1,0 +1,96 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+
+<div metal:fill-slot="main"
+     tal:define="trackback_obj python:here;
+                 hidesummary python:True;">
+
+    <div class="comment">
+
+      <metal:main_macro define-macro="main">
+
+               <h3>
+                   <tal:block replace="structure portal/trackback_icon.gif"/>
+                   <span tal:replace="trackback_obj/title">Trackback title</span>
+               </h3>
+               <div class="documentByLine"
+                   tal:define="mod_date trackback_obj/ModificationDate | here/ZopeTime">
+                   <span i18n:translate="label_comment_by">Posted by</span>
+                   <a tal:attributes="href trackback_obj/url"
+                      tal:content="trackback_obj/blog_name"
+                      href="http://url.posted" >Blog Name</a>
+                   <span i18n:translate="label_commented_at">at</span> 
+                   <span tal:replace="python:portal.toLocalizedTime(mod_date,
+                                      long_format=1)">8/23/2001 12:40:44 PM</span>
+               </div>
+               <div class="commentBody"
+                    tal:content="structure trackback_obj/excerpt">
+                    This is the body text of the trackback.
+               </div>
+
+      </metal:main_macro>
+
+      <tal:block on-error="string:">
+      <span i18n:translate="parent_entry">
+          Parent entry
+      </span>
+      <a href="#"
+         tal:define="entry trackback_obj/getParentEntry"
+         tal:attributes="href entry/absolute_url;">
+          <span tal:content="entry/title">
+              Entry title
+          </span>
+      </a>
+      </tal:block>
+
+      <metal:summary_view define-macro="summary_view">
+      <tal:hidesummary condition="not:hidesummary | nothing">
+          <dt tal:define="entry trackback_obj/getParentEntry | nothing">
+    
+              <tal:block replace="structure portal/trackback_icon.gif"/>
+              <a href="#" 
+                 tal:attributes="href entry/absolute_url | trackback_obj/absolute_url"
+                 tal:content="trackback_obj/title | nothing"
+                 tal:on-error="string:">
+                                Trackback Title
+              </a>
+    
+              <span class="documentByLine">
+    
+                  <span i18n:translate="box_created_by">
+                      by
+                  </span>
+                  <a tal:attributes="href trackback_obj/url"
+                     tal:content="trackback_obj/blog_name"
+                     href="http://url.posted" >Blog Name</a>
+                  &mdash;
+                  <tal:mod i18n:translate="box_last_modified">
+                    last modified
+                  </tal:mod>
+                  <span tal:replace="python:portal.toLocalizedTime(trackback_obj.Date(),long_format=1)">
+                      8/23/2001 12:40:44 PM
+                  </span>
+    
+              </span>
+    
+          </dt>
+          <dd>
+              <span tal:define="pss modules/Products/PythonScripts/standard;
+                                trackback_body trackback_obj/excerpt"
+                    tal:content="structure python:pss.newline_to_br(trackback_body)"> 
+                  description 
+              </span> 
+          </dd>
+      </tal:hidesummary>
+      </metal:summary_view>
+
+    </div>
+
+</div>
+
+<div metal:fill-slot="sub"> &nbsp; </div>
+
+</html>
+

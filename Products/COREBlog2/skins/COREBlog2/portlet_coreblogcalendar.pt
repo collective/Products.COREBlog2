@@ -1,0 +1,92 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      i18n:domain="plone">
+
+<body>
+
+<div metal:define-macro="portlet"
+     tal:omit-tag=""
+     tal:define="DateTime python:modules['DateTime'].DateTime;
+                 current python:DateTime();
+                 yearmonth context/getYearAndMonthToDisplay;
+                 year options/year | python:yearmonth[0];
+                 month options/month | python:yearmonth[1];
+                 prevMonthTime python:here.getPreviousMonth(month, year);
+                 nextMonthTime python:here.getNextMonth(month, year);
+                 weeks python:here.portal_calendar.getEntryForCalendar(month=month, year=year);">
+
+<dl class="portlet" >
+	<dt class="portletHeader"></dt>
+	<dd class="portletItem">
+    <!-- The calendar, rendered as a table -->
+    <table cellspacing="0" class="ploneCalendar" id="portlet-coreblog2calendar" summary="Calendar" i18n:attributes="summary">
+        <thead>
+            <tr>
+                <th id="calendar-previous">
+                    <a href="#" tal:attributes="href python:'%s/archives/%d/%d' % (here.blog_url(),prevMonthTime.year(),prevMonthTime.month())">&laquo;</a>
+                </th>
+                <th colspan="5"
+                    tal:define="date python:DateTime(year, month, 1);">
+                    <a href="#"
+                       tal:attributes="href python:'%s/archives/%d/%d' % (here.blog_url(),year,month)">
+                    <span i18n:translate="" tal:omit-tag="">
+                        <span i18n:name="monthname">
+                            <span i18n:translate=""
+                                  tal:define="monthstring python:date.strftime('%B').capitalize();"
+                                  tal:attributes="id string:calendar-month-$monthstring"
+                                  tal:content="string:$monthstring"
+                                  id="calendar-month-month">&nbsp;</span>
+                        </span>
+                        <span i18n:name="year"
+                              tal:define="year python:date.year()"
+                              tal:content="string:$year"
+                              tal:attributes="id string:calendar-year-$year;"
+                              id="calendar-year">&nbsp;</span>
+                    </span>
+                    </a>
+                 </th>
+                <th id="calendar-next">
+                    <a href="#" tal:attributes="href python:'%s/archives/%d/%d' % (here.blog_url(),nextMonthTime.year(), nextMonthTime.month())">&raquo;</a>
+                </th>
+            </tr>
+            <tr tal:define="weekdays here/portal_calendar/getDays" class="weekdays">
+                <tal:block repeat="weekday weekdays">
+                <td i18n:translate="" tal:content="weekday">Su</td>
+               </tal:block>
+            </tr>
+        </thead>
+        <tbody>
+            <tr tal:repeat="week weeks">
+              <tal:block repeat="day week">
+                <tal:block define="daynumber day/day;
+                                   datestring python: '%d%0.2d%0.2d' % (year, month, daynumber);
+                                   javascriptstring string:javascript:%sDay('%s');">
+                  <td class="event" tal:condition="day/entry"
+                      tal:attributes="class       python:test(current.year()==year and current.month()==month and current.day()==int(daynumber), 'todayevent', 'event')">
+                      <a href="" tal:attributes="href python:'%s/archives/%d/%d/%d' % (here.blog_url(),year,month,daynumber)">
+                        <span tal:replace="python: daynumber or default">&nbsp;</span>
+                      </a>
+                  </td>
+                  <tal:notdayevent tal:condition="not:day/entry">
+                  <td tal:condition="python: current.year()==year and current.month()==month and current.day()==int(daynumber)"
+                      tal:content="python: daynumber or default" class="todaynoevent">
+                    &nbsp;
+                  </td>
+                  <td tal:condition="not: python: current.year()==year and current.month()==month and current.day()==int(daynumber)"
+                      tal:content="python: daynumber or default">
+                    &nbsp;
+                  </td>
+                  </tal:notdayevent>
+                </tal:block>
+              </tal:block>
+            </tr>
+        </tbody>
+    </table>
+	</dd>
+</dl>
+
+</div>
+
+</body>
+
+</html>

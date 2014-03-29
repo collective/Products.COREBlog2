@@ -1,0 +1,118 @@
+changelog
+
+Ver 0.983b                                 (2007/9/6)
+--------------------------------------------------------
+* Plone 3.0 final compatible(partly)
+
+
+Ver 0.982b                                 (2007/4/13)
+--------------------------------------------------------
+* Plone 3.0 compatible(partly)
+* And many many bug fix :-)
+
+
+Ver 0.9b                                   (2006/4/22)
+--------------------------------------------------------
+New features
+
+* RSS feed on category
+http://coreblog.org/trac/coreblog2/changeset/186
+* Plone RSS2 syndication integration
+http://coreblog.org/trac/coreblog2/changeset/176
+* New global porlents, for entry,comment,trackback
+http://coreblog.org/trac/coreblog2/changeset/181
+* New i18n files, de,es,fr,pt,ru
+http://coreblog.org/trac/coreblog2/changeset/171
+http://coreblog.org/trac/coreblog2/changeset/174
+http://coreblog.org/trac/coreblog2/changeset/182
+http://coreblog.org/trac/coreblog2/changeset/183
+* ATVideo integration.
+http://coreblog.org/trac/coreblog2/changeset/172
+
+
+Bug fixed
+* CSS definitions is now more IE friendly :-).
+http://coreblog.org/trac/coreblog2/changeset/177
+* Fix typo, reported by Joao-san :-) 
+http://coreblog.org/trac/coreblog2/changeset/170
+* Fix invalidation of templates
+http://coreblog.org/trac/coreblog2/changeset/178
+http://coreblog.org/trac/coreblog2/changeset/194
+http://coreblog.org/trac/coreblog2/changeset/195
+* Fix validation bug on comment
+http://coreblog.org/trac/coreblog2/changeset/188
+
+Ver 0.81b                                  (2006/2/3)
+--------------------------------------------------------
+
+Bug fixed
+
+portlet CSS fix for Plone 2.1.2
+http://coreblog.org/trac/coreblog2/ticket/33
+
+Ver 0.81a                                 (2006/1/25)
+--------------------------------------------------------
+
+Bug fixed
+
+"AttributeError" thrown when an entry does not have extended text
+http://coreblog.org/trac/coreblog2/ticket/18
+
+Bugs of cookies shown in comment form.
+http://coreblog.org/trac/coreblog2/ticket/21
+
+use toLocalizedTime rather than toPortalTime
+http://coreblog.org/trac/coreblog2/ticket/23
+
+Portlet fotter bug
+http://coreblog.org/trac/coreblog2/ticket/20
+
+Sorting bug on category view
+http://coreblog.org/trac/coreblog2/ticket/17
+
+CSS bug on portlet bottom-border
+http://coreblog.org/trac/coreblog2/ticket/19
+
+
+Ver 0.8b                                  (2005/12/27)
+--------------------------------------------------------
+
+
+Ver 0.8a2                                 (2005/12/25)
+--------------------------------------------------------
+
+New features
+
+* Comment/trackback immediate views fixed.
+
+Ver 0.8a1                                 (2005/12/24)
+--------------------------------------------------------
+Mailing list internal alpha release.
+
+New features
+
+* Listing view for comment folder
+* Find form for entry listing
+* Admin portlet
+* i18n messages for portlets
+* Custom edit form for category/comment/trackback
+* Icons,images for category
+* More nifty error messages (with i18n)
+* More validation
+* Default settings for comment/trackback settings.
+* EMail nortification for comment/trackback
+* RSS feeds for categories
+* Hiding comment form when user has no permission to add a comment, show login button instead 
+
+Bug fixed
+
+* Ordering in archive view
+* Batch bug in archive view
+* Trackback bug 
+
+
+
+Ver 0.7b                                  (2005/11/29)
+--------------------------------------------------------
+First public beta.
+

@@ -1,0 +1,53 @@
+<tal:block tal:define="base30 here/cbbase_edit30/macros;
+                       base20 here/cbbase_edit20/macros;
+                       base python:test(here.portal_migration.getInstanceVersionTuple()[0] == 3, base30, base20);">
+<metal:block use-macro="base/master">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+
+    
+  <body>
+
+    <metal:fill fill-slot="main">
+      <metal:main define-macro="main">
+
+        <metal:use_header use-macro="header_macro" />
+        <metal:use_typedescription use-macro="typedescription_macro" />
+        <metal:use_body use-macro="body_macro">
+        <metal:fill fill-slot="fields">
+
+            <tal:fields condition="python:fieldset in ['default',]">
+              <metal:fieldMacro use-macro="python:here.widget('id', mode='edit')" />
+              <metal:fieldMacro use-macro="python:here.widget('title', mode='edit')" />
+              <metal:fieldMacro use-macro="python:here.widget('author', mode='edit')" />
+              <metal:fieldMacro use-macro="python:here.widget('email', mode='edit')" />
+              <metal:fieldMacro use-macro="python:here.widget('url', mode='edit')" />
+              <metal:fieldMacro use-macro="python:here.widget('post_ip', mode='edit')" />
+              <metal:fieldMacro use-macro="python:here.widget('body', mode='edit')" />
+            </tal:fields>
+
+            <tal:other_fields condition="python:fieldset not in ['default', ]">
+                <tal:fields repeat="field python:schematas[fieldset].editableFields(here, visible_only=True)">
+                  <metal:fieldMacro use-macro="python:here.widget(field.getName(), mode='edit')" />
+                </tal:fields>
+            </tal:other_fields>
+
+        </metal:fill>
+        </metal:use_body>
+        <metal:use_footer use-macro="footer_macro" />
+      </metal:main>
+    </metal:fill>
+
+  </body>
+
+</html>
+
+</metal:block>
+</tal:block>

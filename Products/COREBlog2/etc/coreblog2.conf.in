@@ -1,0 +1,37 @@
+<coreblog2>
+ping_timeout_default        30
+
+# settings for COREBlog2 Folder
+top_entry_count_default     6
+portlet_item_count_default  5
+batch_size_default          8
+dont_send_ping_default      false
+
+# settings for Entry
+description_length          128
+
+# slots
+<slots left_slots_default>
+    slot here/portlet_cbadmin/macros/portlet
+    slot here/portlet_coreblogcalendar/macros/portlet
+    slot here/portlet_about/macros/portlet
+    slot here/portlet_recent_entry/macros/portlet
+    slot here/portlet_recent_comment/macros/portlet
+    slot here/portlet_recent_trackback/macros/portlet
+    slot here/portlet_category/macros/portlet
+    slot here/portlet_coreblog2banner/macros/portlet
+</slots>
+
+<slots right_slots_default>
+</slots>
+
+# allowed content types for entry
+<contenttypes>
+    allowed text/structured
+    allowed text/x-rst
+    allowed text/html
+    allowed text/plain
+</contenttypes>
+
+</coreblog2>
+

@@ -1,0 +1,22 @@
+<tal:block tal:define="base30 here/cbbase_edit30/macros;
+                       base20 here/cbbase_edit20/macros;
+                       base python:test(here.portal_migration.getInstanceVersionTuple()[0] == 3, base30, base20);">
+<metal:block use-macro="base/master">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+
+  <body>
+
+  </body>
+
+</html>
+
+</metal:block>
+</tal:block>

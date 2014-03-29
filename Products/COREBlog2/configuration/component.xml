@@ -1,0 +1,89 @@
+<component prefix="Products.COREBlog2.configuration.datatype">
+
+  <sectiontype name="contenttypes">
+    <description format="plain">
+      Section of content types of an COREBlog2
+    </description>
+    <multikey name="allowed" attribute="allowed_content_types" datatype="string"
+        required="no">
+      <description>
+         XXX
+      </description>
+      <default>
+        allowed text/html
+      </default>
+    </multikey>
+  </sectiontype>
+
+  <sectiontype name="slots">
+    <description format="plain">
+      Section of slots of an COREBlog2
+    </description>
+    <multikey name="slot" attribute="metal_path" datatype="string"
+        required="no">
+      <description>
+         XXX
+      </description>
+      <default></default>
+    </multikey>
+  </sectiontype>
+
+  <sectiontype name="coreblog2" keytype="identifier" datatype=".COREBlog2">
+    <description format="plain">
+      An COREBlog2 type information
+    </description>
+    <key name="ping_timeout_default"
+         datatype="integer" required="no" default="30">
+      <description>
+        XXX
+      </description>
+    </key>
+
+    <key name="top_entry_count_default"
+         datatype="integer" required="no" default="6">
+      <description>
+        XXX
+      </description>
+    </key>
+    
+    <key name="portlet_item_count_default"
+         datatype="integer" required="no" default="5">
+      <description>
+        XXX
+      </description>
+    </key>
+    
+    <key name="batch_size_default"
+         datatype="integer" required="no" default="8">
+      <description>
+        XXX
+      </description>
+    </key>
+    
+    <key name="dont_send_ping_default" datatype="boolean"
+         required="no" default="false">
+      <description>
+        XXX
+      </description>
+    </key>
+    
+    <key name="description_length" datatype="integer" required="no" default="128">
+      <description>
+        XXX
+      </description>
+    </key>
+
+    <section name="left_slots_default" attribute="left_slots_default" type="slots"
+       required="no" />
+
+    <section name="right_slots_default" attribute="right_slots_default" type="slots"
+       required="no" />
+
+    <section name="*" attribute="contenttypes" type="contenttypes"
+       required="no" />
+    
+  </sectiontype>
+
+
+</component>
+

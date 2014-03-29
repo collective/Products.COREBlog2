@@ -1,0 +1,48 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      i18n:domain="plone">
+
+<body>
+
+<!-- The recent entries box - searches all plone instance -->
+
+<div metal:define-macro="portlet"
+     tal:define="results python:here.portal_catalog.searchResults(portal_type='COREBlogComment',
+                                                                  sort_on='Date',
+                                                                  sort_order='reverse')[:5];"
+     tal:condition="results">
+    <dl class="portlet" id="portlet-global-recentcomment">
+        <dt i18n:translate="box_recentcomments"
+             class="portletHeader">
+        Recent comments
+        </dt>
+        <tal:block tal:repeat="obj results">
+        <dd class="portletItem"
+            tal:define="oddrow repeat/obj/odd;
+                        entry obj/getParentEntry | nothing;"
+            tal:attributes="class python:test(oddrow, 
+                                             'portletItem even', 
+                                             'portletItem odd');">
+            <a href=""
+               tal:attributes="href entry/absolute_url;
+                               title obj/Title"
+               tal:content="obj/Title"
+               tal:on-error="string:">
+               Comment title
+            </a>
+            <span class="portletItemDetails">
+                <span tal:replace="obj/author">
+                    by Someone
+                </span>
+                <span tal:replace="python:obj.toLocalizedTime(obj.Date())">
+                    July 7, 08:11
+                </span>
+            </span>
+        </dd>
+        </tal:block>
+    </dl>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      i18n:domain="plone"
+      metal:use-macro="here/main_template/macros/master">
+
+  <head>
+      <metal:block fill-slot="top_slot">
+        <tal:insert tal:replace="nothing"
+              tal:define="dummy python:request.set('enable_border', 1)" />
+      </metal:block>
+  </head>
+
+  <body>
+
+    <div metal:fill-slot="main"
+         tal:define="objs here/getTrackback">
+    <metal:main-macro define-macro="main">
+    <metal:contents use-macro="here/cbentry_comments/macros/contents">
+
+      <metal:block define-slot="noobjects_slot">
+        <p class="discreet"
+           tal:condition="not: batch"
+           i18n:translate="description_no_trackbacks">
+           There are no trackbacks.
+        </p>
+      </metal:block>
+
+    </metal:contents>
+    </metal:main-macro>
+    </div>
+
+
+  </body>
+</html>

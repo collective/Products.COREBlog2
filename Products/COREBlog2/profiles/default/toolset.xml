@@ -1,0 +1,4 @@
+<tool-setup>
+    <required tool_id="coreblog2_tool"
+              class="Products.COREBlog2.COREBlogTool.COREBlog2Tool"/>
+</tool-setup>

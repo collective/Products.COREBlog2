@@ -1,0 +1,688 @@
+# Translation of coreblog2.pot to English
+# Atsushi Shibata <shibata@webcore.co.jp>, 2005
+msgid ""
+msgstr ""
+"Project-Id-Version: COREBlog 2.0a\n"
+"Last-Translator: Atsushi Shibata <shibata@webcore.co.jp>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-Code: ja\n"
+"Language-Name: Japanese\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: plone\n"
+"X-Is-Fallback-For: ja-jp\n"
+
+#
+# Portal Types
+#
+
+#. Default: "COREBlog2"
+#: portal type title of COREBlog2 folder
+msgid "COREBlog2"
+msgstr "COREBlog2"
+
+#. Default: "Entry"
+#: portal type title of COREBlog2 entry
+msgid "COREBlog Entry"
+msgstr "エントリ"
+
+#. Default: "Category"
+#: portal type title of COREBlog2 category
+msgid "COREBlog Category"
+msgstr "カテゴリ"
+
+#
+# Tabs
+#
+
+# COREBlog2Folder
+
+#. Default: "Blog settings"
+#: action defined in coreblog2
+msgid "Blog settings"
+msgstr "Blogの設定"
+
+#. Default: "Entries"
+#: action defined in coreblog2
+msgid "Entries"
+msgstr "エントリ一覧"
+
+#. Default: "Categories"
+#: action defined in coreblog2
+msgid "Categories"
+msgstr "カテゴリ一覧"
+
+# COREBlog2Entry
+
+#. Default: "Comments"
+#: action defined in coreblog2entry
+msgid "Comments"
+msgstr "コメント一覧"
+
+#. Default: "Trackbacks"
+#: action defined in coreblog2entry
+msgid "Trackbacks"
+msgstr "トラックバック一覧"
+
+
+#
+# Messages for blog settings
+#
+
+# Description for COREBlog2
+
+#. Default: "A root folder for COREBlog2, contains blog content,  such as entry,comment,category etc."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "A root folder for COREBlog2, contains blog content,  such as entry,comment,category etc."
+msgstr "COREBlog2用のフォルダです。エントリやコメント，カテゴリのようなBlogのオブジェクトを含みます"
+
+
+# Sections for Blog settings
+
+#. Default: "default"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "default"
+msgstr "基本設定"
+
+#. Default: "Display"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "cbsettings_display"
+msgstr "表示の設定"
+
+#. Default: "Entry editing"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "cbsettings_entry"
+msgstr "エントリ編集設定"
+
+#. Default: "Comments,trackbacks"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "cbsettings_comment_trackback"
+msgstr "コメント,トラックバックの設定"
+
+
+# BASIC settings
+
+#. Default: "Long description"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_long_description"
+msgstr "Blogの解説"
+
+#. Default: "A description for blog. This text will be displayed at 'About portlet', and plain text version automatically set in description."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_long_description"
+msgstr "Blogの解説を記入します。この内容は「このBlogについて」ポートレットに表示されます。プレイン・テキストに変換した内容が，「解説」に自動的に保存されます"
+
+# Advanced settings
+
+#. Default: "Entries per page"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_top_entry_count_setting"
+msgstr "トップページのエントリ表示形式"
+
+#. Default: "Select the types of entry listing, shown on top page of blog. When you select 'In days', entries will be shown in a certain count of days,beginning at most recent entry. With 'In entry count', you will control exact count of entry shown. "
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_top_entry_count_setting"
+msgstr "Blogのトップページに表示するエントリの表示形式を選択します。「日付」を選ぶと，設定した日付分のエントリを表示し，「エントリ数」を選択すると，日付に関係なく設定数のエントリを表示します"
+
+#. Default: "In days"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_show_entry_in_days"
+msgstr "日付"
+
+#. Default: "In entry count"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_show_entry_in_count"
+msgstr "エントリ数"
+
+#. Default: "Entries count"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_top_entry_count"
+msgstr "表示数"
+
+#. Default: "Set the number of entry shown on top page of the blog. The number will have a different meaning, according to formar setting."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_top_entry_count"
+msgstr "Blogのトップページに表示するエントリの数を設定します。数値の意味は上の設定によって変わります"
+
+
+#. Default: "Items per portlet"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_portlet_item_count"
+msgstr "ポートレットに表示するアイテム数"
+
+#. Default: "Set the number of items shown in portlets."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_portlet_item_count"
+msgstr "ポートレットに表示するオブジェクトの数を設定します"
+
+
+#. Default: "Batch size"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_batch_size"
+msgstr "バッチの数"
+
+#. Default: "Set the number of 'batch' size. With this setting, you can control the number of entry par page of category view, archive view, etc."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_batch_size"
+msgstr "バッチ表示で利用する数値を設定します。この設定を使うと，カテゴリやアーカイブで一ページ中に表示されるエントリの数をコントロールできます"
+
+#. Default: "Trackback base URL"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_trackback_base"
+msgstr "トラックバック用のURL"
+
+#. Default: "Use this setting if you have a special url/port to manage blog. For example, in case that you use 'https://portal/blog/' as a special url for edit blog and not want to be exposed for others. You can set some exposable url and trackback/ping url will be replaced in this url."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_trackback_base"
+msgstr "Blogの編集用に特別なURLを利用している場合に，この設定を利用して下さい。たとえば，'https://portal/blog/'のようなURLを編集用に設定していて，外部にこのURLを見せたくない場合に利用します。PINGやトラックバック時には，URLが設定された文字列に置き換えられます。"
+
+#. Default: "Comment/Trackback settings"
+#: ./COREBlog2/entry_edit.cpt
+msgid "label_comment_trackback_settings"
+msgstr "コメント，トラックバックの設定"
+
+
+#. Default: "Object references"
+#: ./COREBlog2/entry_edit.cpt
+msgid "label_object_reference"
+msgstr "オブジェクトの関連づけ"
+
+
+#. Default: "Ping servers"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_ping_servers"
+msgstr "Pingサーバ"
+
+#. Default: "Set URLs of ping servers. Separate URLs with a carriage return."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_ping_servers"
+msgstr "PINGサーバのURLを設定します。複数のURLがある場合は改行で区切ります。"
+
+
+#. Default: "Entrydate format"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_entrydate_format"
+msgstr "エントリの日付フォーマット"
+
+#. Default: "Set date format for entry date. Format string is the same time.strftime uses."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_entrydate_format"
+msgstr "エントリの日付フォーマットを設定します。フォーマット文字列にはPythonのtime.strftimeモジュールと同じものが利用できます。"
+
+
+#. Default: "Default format for entry body"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_body_default_format"
+msgstr "エントリ本文のデフォルトフォーマット"
+
+#. Default: "Default comment status"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_allow_comment_default"
+msgstr "「コメントのステータス」のデフォルト"
+
+#. Default: "Default trackback status"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_receive_trackback_default"
+msgstr "「トラックバックのステータス」のデフォルト"
+
+
+#. Default: "Set the default format of entry body/excerpt. If you set some WYSIWYG editor(kupu,etc.) in Plone's personalize settings, formats will be 'HTML' coercively."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_body_default_format"
+msgstr "エントリの「本文」「追記」のデフォルトフォーマットを設定します。kupuのようなWYSIWYGエディタを使うよう設定している場合は，この設定にかかわらず「HTML」がデフォルトになります"
+
+
+#. Default: "Don\'t send PING/Trackback when entry added"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_dont_send_ping"
+msgstr "エントリを追加した際にPINGとトラックバックを送信しない"
+
+#. Default: "Require author"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_comment_require_author"
+msgstr "「作成者」を入力させる"
+
+#. Default: "When cheked, author name will be required on comment."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_comment_require_author"
+msgstr "コメント追加時に「作成者」を入力するよう求めます"
+
+
+#. Default: "Require email"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_comment_require_email"
+msgstr "「Eメール」を入力させる"
+
+#. Default: "When cheked, email address will be required on comment."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_comment_require_email"
+msgstr "コメント追加時に「Eメール」を入力するよう求めます"
+
+
+#. Default: "Require URL"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_comment_require_url"
+msgstr "「URL」を入力させる"
+
+#. Default: "When cheked, URL will be required on comment."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_comment_require_url"
+msgstr "コメント追加時に「URL」を入力するよう求めます"
+
+#. Default: "Send a notification mail on new comment"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_send_comment_notification"
+msgstr "コメント追加時にお知らせメールを送る"
+
+#. Default: "When checked, a nortification mail will be sent after comment added."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_send_comment_notification"
+msgstr "チェックすると，コメントが追加された時にお知らせメールを送ります"
+
+#. Default: "Send a notification mail on new trackback"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_send_trackback_notification"
+msgstr "トラックバック追加時にお知らせメールを送る"
+
+#. Default: "When checked, a nortification mail will be sent after trackback added."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_send_trackback_notification"
+msgstr "チェックすると，トラックバックが追加された時にお知らせメールを送ります"
+
+#. Default: "Notify From"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_notify_from"
+msgstr "お知らせメールの送信元アドレス"
+
+#. Default: "A sender address of a nortification mail. Be sure to put a vlid address."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_notify_from"
+msgstr "お知らせメールの送信元となるメールアドレスを設定します。有効なアドレスを指定するようにして下さい"
+
+#. Default: "Notify To"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_notify_to"
+msgstr "お知らせメールの送信先アドレス"
+
+#. Default: "Receivers address of a nortification mail. Separate multiple addresses using a comma."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_notify_to"
+msgstr "お知らせメールの送信先を指定します。複数のアドレスがあるときはコンマ(',')でアドレスを区切ります"
+
+#. Default: "A comment added"
+msgid "comment_notify_title"
+msgstr "コメントが追加されました"
+
+#. Default: "EntryURL :%(entry_url)s\nTitle    :%(title)s\nAuthor   :%(author)s\nURL      :%(url)s\nPOST IP  :%(post_ip)s\nBody     :\n%(body)s\n"
+msgid "comment_notify_body"
+msgstr "エントリのURL: %(entry_url)s\nタイトル     : %(title)s\n作成者       : %(author)s\nURL          : %(url)s\nPOST IP      : %(post_ip)s\n本文         :\n%(body)s\n"
+
+#. Default: "A trackback added"
+msgid "trackback_notify_title"
+msgstr "トラックバックが追加されました"
+
+#. Default: "EntryURL : %(entry_url)s\nBlogName : %(blog_name)s\nBlogURL  : %(url)s\nPOST IP  : %(post_ip)s\nTitle    : %(title)s\nExcerpt  :\n%(excerpt)s\n"
+#. Default: "EntryURL :%(entry_url)s\nBlogName :%(blog_name)s\nBlogURL  :%(url)s\nPOST IP  :%(post_ip)s\nExcerpt  :\n%(excerpt)s\n"
+msgid "trackback_notify_body"
+msgstr "エントリのURL : %(entry_url)s\nブログ名      : %(blog_name)s\nブログのURL   : %(url)s\nPOST IP      : %(post_ip)s\nタイトル      : %(title)s\n要約         :\n%(excerpt)s\n"
+
+
+#. Default: "Entry ID"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_entry_id"
+msgstr "エントリのID"
+
+#. Default: "Should not contain spaces, underscores or mixed case. A set of human readable,context descriptive words might be better."
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_entry_id"
+msgstr "空白や下線を入力したり，大文字小文字で単語を区切らないようにしましょう。人が読んで理解でき，エントリの内容を表した英単語の組み合わせにするとよいでしょう"
+
+
+#. Default: "Subtitle"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_subtitle"
+msgstr "サブタイトル"
+
+#. Default: ""
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_subtitle"
+msgstr ""
+
+#. Default: "Body"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_body"
+msgstr "本文"
+
+#. Default: "Body for entry. You can choose format with menu."
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_body"
+msgstr "エントリの本文です。フォーマットをメニューで選択します"
+
+
+#. Default: "Extend"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_extend"
+msgstr "追記"
+
+#. Default: "Extend will not be shown in top page of blog, shown in permalink,category view etc."
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_extend"
+msgstr "「追記」はBlogのトップページには表示されず，永続リンクやカテゴリ・ビューに表示されます"
+
+
+#. Default: "Category(s)"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_entry_categories"
+msgstr "カテゴリ"
+
+#. Default: ""
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_entry_categories"
+msgstr ""
+
+#. Default: Before adding entry, you have to add a category.
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_add_category"
+msgstr "エントリを追加する前に，カテゴリを追加して下さい。"
+
+#. Default: [ Add Category ]
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_link_for_add_category"
+msgstr "[ カテゴリを追加する ]"
+
+
+#. Default: "Trackback"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_trackback"
+msgstr "トラックバック"
+
+#. Default: "Trackback URLs to send. Separate URLs with a carriage return."
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_trackback"
+msgstr "送信するトラックバック用のURLを記入します。複数のURLがある時は改行で区切ります"
+
+#. Default: "Comment status"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_allow_comment"
+msgstr "コメントのステータス"
+
+#. Default: ""
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_allow_comment"
+msgstr ""
+
+#. Default: "None(cannot add,hidden)"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_entrycommentstatus_none"
+msgstr "追加不可/非表示"
+
+#. Default: "Open(can add,shown)"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_entrycommentstatus_open"
+msgstr "追加可能/表示"
+
+#. Default: "Closed(cannot add,shown)"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_entrycommentstatus_closed"
+msgstr "追加不可/表示"
+
+
+#. Default: "Trackback status"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_receive_trackback"
+msgstr "トラックバックのステータス"
+
+#. Default: ""
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_receive_trackback"
+msgstr ""
+
+#. Default: "Recent items"
+#: ./COREBlog2/entry_edit.cpt
+msgid "label_recent_items"
+msgstr "最近追加されたオブジェクト"
+
+#. Default: "Insert"
+#: ./COREBlog2/entry_edit.cpt
+msgid "label_insert"
+msgstr "挿入"
+
+#. Default: "View"
+#: ./COREBlog2/entry_edit.cpt
+msgid "label_view"
+msgstr "表示"
+
+
+
+#. Default: "Media position"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_position"
+msgstr "メディアオブジェクトの位置"
+
+#. Default: "Choose position of referenced media objects(Images)."
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_media_position"
+msgstr "エントリに関連づけられたメディアオブジェクト(画像のような)の位置を選択します"
+
+#. Default: "Top,horizontal"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_position_top"
+msgstr "エントリ上部，横向きに表示"
+
+#. Default: "Bottom,horizontal"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_position_bottom"
+msgstr "エントリ下部，横向きに表示"
+
+#. Default: "Left,vertical"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_position_left"
+msgstr "左，縦向きに表示"
+
+#. Default: "Right,vertical"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_position_right"
+msgstr "右，縦向きに表示"
+
+
+#. Default: "Media size"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_size"
+msgstr "メディアオブジェクトの大きさ"
+
+#. Default: "Choose size for media, shown in entry."
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_media_size"
+msgstr "エントリ上にメディアオブジェクトを表示する大きさを選びます"
+
+#. Default: "Large (768,768)"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_size_large"
+msgstr "大きい(768x768)"
+
+#. Default: "Prenew (400,400)"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_size_preview"
+msgstr "プレビュー(400x400)"
+
+#. Default: "Mini (200,200)"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_size_mini"
+msgstr "小さい(200x200)"
+
+#. Default: "Thumbnail (128,128)"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_size_thumbnail"
+msgstr "サムネイル(128x128)"
+
+#. Default: "No resize"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_size_noresize"
+msgstr "大きさを変えない"
+
+
+# Categories
+
+#. Default: "Category image"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_category_image"
+msgstr "カテゴリの画像"
+
+#. Default: ""
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_category_image"
+msgstr ""
+
+#. Default: ""
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "cbentry_extented_fields"
+msgstr "追加の要素"
+
+#. Default: "Find entries"
+#: ./COREBlog2/entry_listing.cpt
+msgid "label_find_entries"
+msgstr "エントリの検索"
+
+#. Default: "Start"
+#: ./COREBlog2/entry_listing.cpt
+msgid "label_min_date"
+msgstr "開始日"
+
+#. Default: "End"
+#: ./COREBlog2/entry_listing.cpt
+msgid "label_max_date"
+msgstr "終了日"
+
+
+#
+# Messages in templates
+#
+
+#. Default: "posted at"
+#: ./COREBlog2/entry_document_byline.cpt
+msgid "box_posted"
+msgstr "投稿日"
+
+#. Default: "Continue reading..."
+#: ./COREBlog2/coreblog_view.cpt
+msgid "continue_reading"
+msgstr "続きを読む"
+
+#. Default: "Category(s)"
+#: ./COREBlog2/entry_view.cpt
+msgid "entry_category"
+msgstr "カテゴリ"
+
+#. Default: "The URL to Trackback this entry is:"
+#: ./COREBlog2/entry_view.cpt
+msgid "entry_trackbackurl"
+msgstr "トラックバック用URL:"
+
+#. Default: "Permalink"
+#: ./COREBlog2/entry_view.cpt
+msgid "permalink"
+msgstr "固定リンク"
+
+#. Default: "Comment (${num_category})"
+#: ./COREBlog2/entry_view.cpt
+msgid "entry_comment"
+msgstr "コメント (${num_category})"
+
+#. Default: "Trackback (${num_trackback})"
+#: ./COREBlog2/entry_view.cpt
+msgid "entry_trackback"
+msgstr "トラックバック (${num_trackback})"
+
+#. Default: "Main"
+#: ./COREBlog2/entry_view.cpt
+msgid "link_to_main"
+msgstr "メイン"
+
+#. Default: "Remember your info. on cookie?"
+#: ./COREBlog2/comment.cpt
+msgid "remember_info"
+msgstr "入力した情報をクッキーに記憶する"
+
+#. Default: "Reset Cookie"
+#: ./COREBlog2/comment.cpt
+msgid "label_reset_cookie"
+msgstr "クッキーを消去する"
+
+#. Default: "Preview"
+#: ./COREBlog2/comment.cpt
+msgid "label_preview"
+msgstr "確認"
+
+#. Default: "Please enter a value"
+#: ./COREBlog2/validateComment.vpy
+msgid "Please enter a value"
+msgstr "値を入力して下さい"
+
+#. Default: "Parent entry"
+#: ./COREBlog2/cbcomment_view.py
+msgid "parent_entry"
+msgstr "親エントリ"
+
+# portlets
+
+#. Default: "About this blog"
+#: ./skins/COREBlog2/portlet_about.pt
+msgid "box_about"
+msgstr "このBlogについて"
+
+#. Default: "Categories"
+#: ./skins/COREBlog2/portlet_categories.pt
+msgid "box_categories"
+msgstr "カテゴリ"
+
+#. Default: "Recent comments"
+#: ./skins/COREBlog2/portlet_recent_comment.pt
+msgid "box_recentcomments"
+msgstr "最近のコメント"
+
+#. Default: "Recent entries"
+#: ./skins/COREBlog2/portlet_recent_entry.pt
+msgid "box_recententry"
+msgstr "最近のエントリ"
+
+#. Default: "Recent trackbacks"
+#: ./skins/COREBlog2/portlet_recent_trackback.pt
+msgid "box_recenttrackback"
+msgstr "最近のトラックバック"
+
+#. Default: "Blog admin"
+#: ./skins/COREBlog2/portlet_cbadmin.pt
+msgid "box_cbadmin"
+msgstr "Blogの管理"
+
+#. Default: "Add new item"
+#: ./skins/COREBlog2/portlet_cbadmin.pt
+msgid "label_adminportlet_add_new_item"
+msgstr "アイテムを追加する"
+
+#. Default: "Content listing"
+#: ./skins/COREBlog2/portlet_cbadmin.pt
+msgid "label_adminportlet_content_listing"
+msgstr "コンテンツ一覧の表示"
+
+#. Default: "Categories"
+#: ./skins/COREBlog2/portlet_cbadmin.pt
+msgid "label_categories"
+msgstr "カテゴリ一覧"
+
+#. Default: "Images"
+#: ./skins/COREBlog2/portlet_cbadmin.pt
+msgid "label_images"
+msgstr "画像一覧"
+
+#. Default: "Files"
+#: ./skins/COREBlog2/portlet_cbadmin.pt
+msgid "label_files"
+msgstr "ファイル一覧"
+
+#. Default: "${name} is required, please correct."
+#: ./skins/COREBlog2/portlet_cbadmin.pt
+msgid "error_required"
+msgstr "${name} は必須項目です。入力して下さい。"

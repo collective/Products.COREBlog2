@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<rss version="2.0" 
+     xmlns:tal="http://xml.zope.org/namespaces/tal"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+     xmlns:metal="http://xml.zope.org/namespaces/metal" >
+<metal:block define-macro="item">
+     <content:encoded tal:content="structure python:'\074![CDATA['+res.getBody()+']]\076'">  </content:encoded>
+     <tal:enclosure on-error="string:"
+                    define="file res/getEnclosedObjects;"
+                    condition="file">
+          <tal:define define="item_size file/get_size | python: file and len(file) or 0;
+                              content_type file/getContentType;">
+          <enclosure tal:attributes="type content_type;
+                                     length item_size;
+                                     url file/absolute_url;"/>
+          </tal:define>
+      </tal:enclosure>
+</metal:block>
+</rss>

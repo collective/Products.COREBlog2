@@ -1,0 +1,684 @@
+# Atsushi Shibata <shibata@webcore.co.jp>, 2005
+msgid ""
+msgstr ""
+"Project-Id-Version: COREBlog 2.0a\n"
+"Last-Translator: Jonathan Lewis <jonathan_lewis@mac.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: plone\n"
+
+#
+# Portal Types
+#
+
+#. Default: "COREBlog2"
+#: portal type title of COREBlog2 folder
+msgid "COREBlog2"
+msgstr "COREBlog2"
+
+#. Default: "Entry"
+#: portal type title of COREBlog2 entry
+msgid "COREBlog Entry"
+msgstr "Entry"
+
+#. Default: "Category"
+#: portal type title of COREBlog2 category
+msgid "COREBlog Category"
+msgstr "Category"
+
+#
+# Tabs
+#
+
+# COREBlog2Folder
+
+#. Default: "Blog settings"
+#: action defined in coreblog2
+msgid "Blog settings"
+msgstr "Blog settings"
+
+#. Default: "Entries"
+#: action defined in coreblog2
+msgid "Entries"
+msgstr "Entries"
+
+#. Default: "Categories"
+#: action defined in coreblog2
+msgid "Categories"
+msgstr "Categories"
+
+# COREBlog2Entry
+
+#. Default: "Comments"
+#: action defined in coreblog2entry
+msgid "Comments"
+msgstr "Comments"
+
+#. Default: "Trackbacks"
+#: action defined in coreblog2entry
+msgid "Trackbacks"
+msgstr "Trackbacks"
+
+
+#
+# Messages for blog settings
+#
+
+# Description for COREBlog2
+
+#. Default: "A root folder for COREBlog2, contains blog content, such as entries, comments, and categories"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "A root folder for COREBlog2, contains blog content, such as entries, comments, and categories"
+msgstr "A root folder for COREBlog2, contains blog content, such as entries, comments, and categories"
+
+# Sections for Blog settings
+
+#. Default: "default"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "default"
+msgstr "default"
+
+#. Default: "Display"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "cbsettings_display"
+msgstr "Display"
+
+#. Default: "Entry editing"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "cbsettings_entry"
+msgstr "Entry editing"
+
+#. Default: "Comments,trackbacks"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "cbsettings_comment_trackback"
+msgstr "Comments,trackbacks"
+
+
+# BASIC settings
+
+#. Default: "Long description"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_long_description"
+msgstr "Long description"
+
+#. Default: "A  description of your blog. This text will be displayed in the 'About portlet', and a plain text version will automatically be set as the description."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_long_description"
+msgstr "A longer description of your blog. This text will be displayed in the 'About portlet', and a plain text version will automatically be set as the description."
+
+# Advanced settings
+
+#. Default: "Entries per page"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_top_entry_count_setting"
+msgstr "Entries per page"
+
+#. Default: "Select the type of entry listing on the top page of your blog. If you select 'Show entries for a set number of days', all the entries you have made in a certain number of days will be displayed, with the most recent entry at the top. If you select 'Show a set number of entries', you can specify the number of entries that should be shown on the tope page."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_top_entry_count_setting"
+msgstr "Select the way entries are listed on the top page of your blog. If you select 'Show all entries for a set number of days', all the entries you have made in a certain number of days will be displayed, with the most recent entry at the top. If you select 'Show a set number of entries', you can specify the number of entries that should be shown on the tope page."
+
+#. Default: "Show all entries for a set number of days"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_show_all_entries_for_a_set_number_of_days"
+msgstr "Show all entries for a set number of days"
+
+#. Default: "Show a set number of entries"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_show_entry_in_count"
+msgstr "Show a set number of entries"
+
+#. Default: "Number of days or entries"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_top_number_of_days_or_entries"
+msgstr "Number of days or entries"
+
+#. Default: "If you have selected 'Show all entries for a set number of days' above, this number will be the number of days for which entries will be displayed on the top page. If you have selected 'Show a set number of entries' this number will be the number of entries that are shown on the top page."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_top_entry_count"
+msgstr "If you have selected 'Show all entries for a set number of days' above, this number will be the number of days for which entries will be displayed on the top page. If you have selected 'Show a set number of entries' this number will be the number of entries that are shown on the top page."
+
+
+#. Default: "Items per portlet"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_portlet_item_count"
+msgstr "Items per portlet"
+
+#. Default: "Set the number of items shown in portlets."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_portlet_item_count"
+msgstr "Set the number of items shown in portlets."
+
+
+#. Default: "Batch size"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_batch_size"
+msgstr "Batch size"
+
+#. Default: "With this setting you can control the number of entries shown per page of category view, archive view, etc."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_batch_size"
+msgstr "With this setting you can control the number of entries shown per page of category view, archive view, etc."
+
+#. Default: "Trackback base URL"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_trackback_base"
+msgstr "Trackback base URL"
+
+#. Default: "Use this setting if you are using a special url/port to manage your blog. For example, you might be using 'https://portal/blog/' as a special url for editing your blog and you do not want this URL to be exposed to others. When trackback or ping are sent, the special url will be replaced with the URL you enter here."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_trackback_base"
+msgstr "Use this setting if you are using a special url/port to manage your blog. For example, you might be using 'https://portal/blog/' as a special url for editing your blog and you do not want this URL to be exposed to others. When trackback or ping are sent, the special url will be replaced with the URL you enter here."
+
+#. Default: "Comment/Trackback settings"
+#: ./COREBlog2/entry_edit.cpt
+msgid "label_comment_trackback_settings"
+msgstr "Comment/Trackback settings"
+
+
+#. Default: "Object references"
+#: ./COREBlog2/entry_edit.cpt
+msgid "label_object_reference"
+msgstr "Object references"
+
+
+
+#. Default: "Ping servers"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_ping_servers"
+msgstr "Ping servers"
+
+#. Default: "Set URLs of ping servers. Separate URLs with a carriage return."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_ping_servers"
+msgstr "Set URLs of ping servers. Separate URLs with a carriage return."
+
+
+#. Default: "Entrydate format"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_entrydate_format"
+msgstr "Entrydate format"
+
+#. Default: "Set the date format for entry dates. The format string is the same as that used by time.strftime."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_entrydate_format"
+msgstr "Set date format for entry date. Format string is the same time.strftime uses."
+
+
+#. Default: "Default format for entry body"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_body_default_format"
+msgstr "Default format for entry body"
+
+#. Default: "Default comment status"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_allow_comment_default"
+msgstr "Default comment status"
+
+#. Default: "Default trackback status"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_receive_trackback_default"
+msgstr "Default trackback status"
+
+
+#. Default: "Set the default format of each entry's body and extend. If you have turned on a WYSIWYG editor (kupu,etc.) in Plone's personalize settings, the setting here will be ignored and the default format will be 'HTML'."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_body_default_format"
+msgstr "Set the default format of each entry's body and extend. If you have turned on a WYSIWYG editor (kupu,etc.) in Plone's personalize settings, the setting here will be ignored and the default format will be 'HTML'."
+
+
+#. Default: "Don\'t send PING/Trackback when an entry is added"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_dont_send_ping"
+msgstr "Don\'t send PING/Trackback when an entry is added"
+
+#. Default: "Require author"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_comment_require_author"
+msgstr "Require author"
+
+#. Default: "When cheked, people entering comments will be required to provide an author name."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_comment_require_author"
+msgstr "When cheked, people entering comments will be required to provide an author name."
+
+
+#. Default: "Require email"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_comment_require_email"
+msgstr "Require email"
+
+#. Default: "When checked, people entering comments will be required to provide an email address."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_comment_require_email"
+msgstr "When checked, people entering comments will be required to provide an email address."
+
+
+#. Default: "Require URL"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_comment_require_url"
+msgstr "Require URL"
+
+#. Default: "When checked, people entering comments will be required to provide a URL."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_comment_require_url"
+msgstr "When checked, people entering comments will be required to provide a URL."
+
+#. Default: "Send a notification mail on new comment"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_send_comment_notification"
+msgstr "Send a notification mail on new comment"
+
+#. Default: "When checked, a notification mail will be sent after comment added."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_send_comment_notification"
+msgstr "When checked, a notification mail will be sent after comment added."
+
+#. Default: "Send a notification mail on new trackback"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_send_trackback_notification"
+msgstr "Send a notification mail on new trackback"
+
+#. Default: "When checked, a notification mail will be sent after trackback added."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_send_trackback_notification"
+msgstr "When checked, a notification mail will be sent after trackback added."
+
+#. Default: "Notify From"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_notify_from"
+msgstr "Notify From"
+
+#. Default: "A sender address of a notification mail. Be sure to put a valid address."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_notify_from"
+msgstr "A sender address of a notification mail. Be sure to put a valid address."
+
+#. Default: "Notify To"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_notify_to"
+msgstr "Notify To"
+
+#. Default: "Receivers address of a notification mail. Separate multiple addresses using a comma."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_notify_to"
+msgstr "Receivers address of a notification mail. Separate multiple addresses using a comma."
+
+#. Default: "A comment added"
+msgid "comment_notify_title"
+msgstr "A comment added"
+
+#. Default: "EntryURL : %(entry_url)s\nTitle    : %(title)s\nAuthor   : %(author)s\nURL      : %(url)s\nPOST IP  : %(post_ip)s\nBody     :\n%(body)s\n"
+msgid "comment_notify_body"
+msgstr "EntryURL : %(entry_url)s\nTitle    : %(title)s\nAuthor   : %(author)s\nURL      : %(url)s\nPOST IP  : %(post_ip)s\nBody     :\n%(body)s\n"
+
+#. Default: "A trackback added"
+msgid "trackback_notify_title"
+msgstr "A trackback added"
+
+#. Default: "EntryURL : %(entry_url)s\nBlogName : %(blog_name)s\nBlogURL  : %(url)s\nPOST IP  : %(post_ip)s\nTitle    : %(title)s\nExcerpt  :\n%(excerpt)s\n"
+msgid "trackback_notify_body"
+msgstr "EntryURL : %(entry_url)s\nBlogName : %(blog_name)s\nBlogURL  : %(url)s\nPOST IP  : %(post_ip)s\nTitle    : %(title)s\nExcerpt  :\n%(excerpt)s\n"
+
+
+#. Default: "Entry ID"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_entry_id"
+msgstr "Entry ID"
+
+#. Default: "Should not contain spaces, underscores or mixed case. A set of human readable, context descriptive words might be better."
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_entry_id"
+msgstr "Should not contain spaces, underscores or mixed case. A set of human readable, context descriptive words might be better."
+
+
+
+#. Default: "Subtitle"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_subtitle"
+msgstr "Subtitle"
+
+#. Default: ""
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_subtitle"
+msgstr ""
+
+#. Default: "Body"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_body"
+msgstr "Body"
+
+#. Default: "The body text of the entry. You can choose the format from the menu."
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_body"
+msgstr "The body text of the entry. You can choose the format from the menu."
+
+
+#. Default: "Extend"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_extend"
+msgstr "Extend"
+
+#. Default: "Extend will not be shown on the top page of the blog. It will be shown in permalink,category view etc."
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_extend"
+msgstr "Extend will not be shown on the top page of the blog. It will be shown in permalink,category view etc."
+
+
+#. Default: "Category(s)"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_entry_categories"
+msgstr "Category(s)"
+
+#. Default: ""
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_entry_categories"
+msgstr ""
+
+#. Default: Before adding entry, you have to add a category.
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_add_category"
+msgstr "Before adding entry, you have to add a category."
+
+#. Default: [ Add Category ]
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_link_for_add_category"
+msgstr "[ Add Category ]"
+
+#. Default: "Trackback"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_trackback"
+msgstr "Trackback"
+
+#. Default: "Trackback URLs to send. Separate URLs with a carriage return."
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_trackback"
+msgstr "Trackback URLs to send. Separate URLs with a carriage return."
+
+#. Default: "Comment status"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_allow_comment"
+msgstr "Comment status"
+
+#. Default: ""
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_allow_comment"
+msgstr ""
+
+#. Default: "None (cannot add / hidden)"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_entrycommentstatus_none"
+msgstr "None (cannot add / hidden)"
+
+#. Default: "Open (can add / shown)"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_entrycommentstatus_open"
+msgstr "Open (can add / shown)"
+
+#. Default: "Closed (cannot add / shown)"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_entrycommentstatus_closed"
+msgstr "Closed (cannot add / shown)"
+
+
+#. Default: "Trackback status"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_receive_trackback"
+msgstr "Trackback status"
+
+#. Default: ""
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_receive_trackback"
+msgstr ""
+
+
+#. Default: "Recent items"
+#: ./COREBlog2/entry_edit.cpt
+msgid "label_recent_items"
+msgstr "Recent items"
+
+#. Default: "Insert"
+#: ./COREBlog2/entry_edit.cpt
+msgid "label_insert"
+msgstr "Insert"
+
+#. Default: "View"
+#: ./COREBlog2/entry_edit.cpt
+msgid "label_view"
+msgstr "View"
+
+
+#. Default: "Media position"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_position"
+msgstr "Media position"
+
+#. Default: "Choose position of images and other referenced media objects."
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_media_position"
+msgstr "Choose position of images and other referenced media objects."
+
+#. Default: "Top, horizontal"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_position_top"
+msgstr "Top, horizontal"
+
+#. Default: "Bottom, horizontal"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_position_bottom"
+msgstr "Bottom, horizontal"
+
+#. Default: "Left, vertical"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_position_left"
+msgstr "Left, vertical"
+
+#. Default: "Right, vertical"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_position_right"
+msgstr "Right, vertical"
+
+
+#. Default: "Media size"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_size"
+msgstr "Media size"
+
+#. Default: "Choose the size at which the media object (image etc.) will be shown in the entry."
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_media_size"
+msgstr "Choose the size at which the media object (image etc.) will be shown in the entry."
+
+#. Default: "Large (768,768)"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_size_large"
+msgstr "Large (768,768)"
+
+#. Default: "Preview (400,400)"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_size_preview"
+msgstr "Preview (400,400)"
+
+#. Default: "Mini (200,200)"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_size_mini"
+msgstr "Mini (200,200)"
+
+#. Default: "Thumbnail (128,128)"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_size_thumbnail"
+msgstr "Thumbnail (128,128)"
+
+#. Default: "Original size"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_size_noresize"
+msgstr "Original resize"
+
+
+# Categories
+
+#. Default: "Category image"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_category_image"
+msgstr "Category image"
+
+
+#. Default: ""
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_category_image"
+msgstr ""
+
+#. Default: ""
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "cbentry_extented_fields"
+msgstr "Extented Fields"
+
+
+#. Default: "Find entries"
+#: ./COREBlog2/entry_listing.cpt
+msgid "label_find_entries"
+msgstr "Find entries"
+
+#. Default: "Start"
+#: ./COREBlog2/entry_listing.cpt
+msgid "label_min_date"
+msgstr "Start"
+
+#. Default: "End"
+#: ./COREBlog2/entry_listing.cpt
+msgid "label_max_date"
+msgstr "End"
+
+
+
+#
+# Messages in templates
+#
+
+#. Default: "posted at"
+#: ./COREBlog2/entry_document_byline.cpt
+msgid "box_posted"
+msgstr "posted at"
+
+#. Default: "Continue reading..."
+#: ./COREBlog2/coreblog_view.cpt
+msgid "continue_reading"
+msgstr "Continue reading..."
+
+#. Default: "Category(s)"
+#: ./COREBlog2/entry_view.cpt
+msgid "entry_category"
+msgstr "Category(s)"
+
+#. Default: "The URL to Trackback this entry is:"
+#: ./COREBlog2/entry_view.cpt
+msgid "entry_trackbackurl"
+msgstr "The URL to Trackback this entry is:"
+
+#. Default: "Permalink"
+#: ./COREBlog2/entry_view.cpt
+msgid "permalink"
+msgstr "Permalink"
+
+#. Default: "Comment (${num_category})"
+#: ./COREBlog2/entry_view.cpt
+msgid "entry_comment"
+msgstr "Comment (${num_category})"
+
+#. Default: "Trackback (${num_trackback})"
+#: ./COREBlog2/entry_view.cpt
+msgid "entry_trackback"
+msgstr "Trackback (${num_trackback})"
+
+#. Default: "Main"
+#: ./COREBlog2/entry_view.cpt
+msgid "link_to_main"
+msgstr "Main"
+
+
+#. Default: "Remember your information on cookie?"
+#: ./COREBlog2/comment.cpt
+msgid "remember_info"
+msgstr "Remember your information on cookie?"
+
+#. Default: "Reset Cookie"
+#: ./COREBlog2/comment.cpt
+msgid "label_reset_cookie"
+msgstr "Reset Cookie"
+
+#. Default: "Preview"
+#: ./COREBlog2/comment.cpt
+msgid "label_preview"
+msgstr "Preview"
+
+#. Default: "Please enter a value"
+#: ./COREBlog2/validateComment.vpy
+msgid "Please enter a value"
+msgstr "Please enter a value"
+
+#. Default: "Parent entry"
+#: ./COREBlog2/cbcomment_view.py
+msgid "parent_entry"
+msgstr "Parent entry"
+
+# portlets
+
+#. Default: "About this blog"
+#: ./skins/COREBlog2/portlet_about.pt
+msgid "box_about"
+msgstr "About this blog"
+
+#. Default: "Categories"
+#: ./skins/COREBlog2/portlet_categories.pt
+msgid "box_categories"
+msgstr "Categories"
+
+#. Default: "Recent comments"
+#: ./skins/COREBlog2/portlet_recent_comment.pt
+msgid "box_recentcomments"
+msgstr "Recent comments"
+
+#. Default: "Recent entries"
+#: ./skins/COREBlog2/portlet_recent_entry.pt
+msgid "box_recententry"
+msgstr "Recent entries"
+
+#. Default: "Recent trackbacks"
+#: ./skins/COREBlog2/portlet_recent_trackback.pt
+msgid "box_recenttrackback"
+msgstr "Recent trackbacks"
+
+#. Default: "Blog admin"
+#: ./skins/COREBlog2/portlet_cbadmin.pt
+msgid "box_cbadmin"
+msgstr "Blog admin"
+
+#. Default: "Add new item"
+#: ./skins/COREBlog2/portlet_cbadmin.pt
+msgid "label_adminportlet_add_new_item"
+msgstr "Add new item"
+
+#. Default: "Content listing"
+#: ./skins/COREBlog2/portlet_cbadmin.pt
+msgid "label_adminportlet_content_listing"
+msgstr "Content listing"
+
+#. Default: "Categories"
+#: ./skins/COREBlog2/portlet_cbadmin.pt
+msgid "label_categories"
+msgstr "Categories"
+
+#. Default: "Images"
+#: ./skins/COREBlog2/portlet_cbadmin.pt
+msgid "label_images"
+msgstr "Images"
+
+#. Default: "Files"
+#: ./skins/COREBlog2/portlet_cbadmin.pt
+msgid "label_files"
+msgstr "Files"

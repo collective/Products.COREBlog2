@@ -1,0 +1,47 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      i18n:domain="plone">
+
+<body>
+
+<!-- The recent entries box -->
+
+<div metal:define-macro="portlet"
+     tal:define="results python:here.getRecentEntry(type=2,limit=here.getPortlet_item_count())"
+     tal:condition="results">
+
+    <dl class="portlet" id="portlet-recententry">
+
+        <dt i18n:translate="box_recententry"
+            class="portletHeader">
+            Recent entries
+        </dt>
+
+        <tal:block tal:repeat="obj results">
+        <dd class="portletItem"
+            tal:define="oddrow repeat/obj/odd;"
+            tal:attributes="class python:test(oddrow, 
+                                             'portletItem even', 
+                                             'portletItem odd');">
+            <a href=""
+               tal:attributes="href obj/absolute_url;
+                               title obj/Description"
+               tal:content="obj/Title">
+               Entry title
+            </a>
+            <span class="portletItemDetails">
+                <span tal:replace="obj/Creator">
+                    by Someone
+                </span>
+                <span tal:replace="python:obj.toLocalizedTime(obj.Date())">
+                    July 7, 08:11
+                </span>
+            </span>
+        </dd>
+        </tal:block>
+    </dl>
+
+</div>
+</body>
+
+</html>

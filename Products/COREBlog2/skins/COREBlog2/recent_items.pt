@@ -1,0 +1,84 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="plone">
+  <head><title></title></head>
+  <body>
+
+    <!-- Recentitems Widgets -->
+
+    <div metal:define-macro="edit">
+        <label for="relatedItems"
+               i18n:translate="label_recent_items">
+               Recent items
+        </label>
+        <table cellspacing="0" 
+               cellpadding="2"
+               class="listing recentItemsBox"
+               tal:define="formindex formindex | python:2;">
+          <tbody>
+              <tr>
+                  <th i18n:translate="">Title</th>
+                  <th i18n:translate="">Type</th>
+                  <th>&nbsp;</th>
+              </tr>
+              <tal:results tal:repeat="item here/getRecentItems">
+                  <tal:row  tal:define="oitem python:item.getObject();
+                                          uid oitem/aq_explicit/UID|string:'';
+                                          item_referenceable python:True;
+                                          has_uid python:hasattr(oitem.aq_explicit, 'UID');
+                                          referenceable python:has_uid and item_referenceable;
+                                          color here/base_properties/discreetColor;">
+                       <tr tal:define="oddrow repeat/item/odd"
+                           tal:attributes="class python:test(oddrow, 'even', 'odd')">
+                           <td class="nosort">
+                               <img src="#" tal:attributes="src string:${here/portal_url}/${oitem/getIcon};alt oitem/Title" />
+                               <a tal:condition="python: oitem.isPrincipiaFolderish"
+                                  tal:attributes="href python: oitem.absolute_url() + '/' + template.getId() + '?fieldName='+ fieldName + '&amp;'">
+                                    <strong tal:condition="referenceable"
+                                            tal:content="oitem/title_or_id">Title</strong>
+                                    <span style="" 
+                                          tal:condition="not: referenceable" 
+                                          tal:content="oitem/title_or_id"/>
+                               </a>
+                               <tal:foldercheck tal:condition="python: not (oitem.isPrincipiaFolderish and oitem &lt;&gt; here)" >
+                                    <strong tal:condition="referenceable"
+                                       tal:content="oitem/title_or_id">Title
+                                    </strong>
+                                    <span style="" 
+                                          tal:condition="python:not referenceable" 
+                                          tal:content="oitem/title_or_id"
+                                          tal:attributes="style string:color:${color}" />
+                               </tal:foldercheck>
+                           </td>
+                           <td style=""
+                               i18n:domain="plone"
+                               i18n:translate=""
+                               tal:attributes="style python:test(referenceable, '', 'color:' + color)">
+                               <div tal:replace="python: oitem.getTypeInfo().Title()" />
+                           </td>
+                           <td nowrap="nowrap" 
+                               tal:define="title python: oitem.title_or_id().replace('\'', '\\\'')">
+                               <tal:referenceable tal:condition="referenceable">
+                                    <input type="button" class="context" value="insert"
+                                        onclick=""
+                                        i18n:attributes="value label_insert;"
+                                        tal:attributes="onclick string: javascript:referencebrowser_setReference('${fieldName}',  '${uid}', '${title}', ${formindex});;  ;" />
+                                    <input type="button" class="context" value="view"
+                                        onclick=""
+                                        i18n:attributes="value label_view;"
+                                        tal:attributes="onclick string: javascript:window.open('${oitem/absolute_url}');; ;" />
+                               </tal:referenceable>
+                           </td>
+                       </tr>
+                  </tal:row>
+              </tal:results>
+          </tbody>
+      </table>
+    </div>
+
+  </body>
+
+</html>
+

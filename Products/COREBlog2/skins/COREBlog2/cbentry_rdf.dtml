@@ -1,0 +1,15 @@
+
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="<dtml-var blog_url missing="">"
+    trackback:ping="<dtml-var blog_url missing="">/<dtml-var "entry_obj.id" missing="">/tbping"
+    dc:title="<dtml-var "entry_obj.Title()" html_quote>"
+    dc:identifier="<dtml-var blog_url missing="">/<dtml-var "entry_obj.id" missing="">"
+    dc:description="<dtml-var "entry_obj.Description()" html_quote>"
+    dc:creator="<dtml-var Creator html_quote>"
+    dc:date="<dtml-var "DateTime(Date()).strftime('%Y-%m-%dT%H:%M:%S+09:00')">" />
+</rdf:RDF>
+-->

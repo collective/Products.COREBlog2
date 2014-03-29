@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<object name="portal_catalog" meta_type="Plone Catalog Tool">
+    <index name="getTags" meta_type="KeywordIndex">
+            <indexed_attr value="getTags"/>
+    </index>
+    <index name="getEntry_categories" meta_type="KeywordIndex">
+        <indexed_attr value="getEntry_categories"/>
+    </index>
+    <index name="getPost_ip" meta_type="FieldIndex">
+        <indexed_attr value="getPost_ip"/>
+    </index>
+
+    <column value="getTags" />
+    <column value="getInternal_id" />
+
+</object>

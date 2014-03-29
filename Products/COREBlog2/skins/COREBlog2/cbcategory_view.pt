@@ -1,0 +1,97 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US"
+      lang="en-US"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+
+  <metal:block fill-slot="top_slot"/>
+
+  <metal:block fill-slot="css_slot">
+    <style type="text/css" media="all"
+      tal:content="string:@import url(${here/blog_url}/coreblog.css);">
+    </style>
+    <style type="text/css" media="all"
+      tal:content="string:@import url(${here/blog_url}/coreblogCustom.css);">
+    </style>
+  </metal:block>
+
+  <body>
+
+    <div metal:fill-slot="main">
+      <div metal:define-macro="main"
+       tal:omit-tag="">
+
+        <div tal:replace="structure provider:plone.documentactions" />
+
+
+        <h1 tal:content="here/pretty_title_or_id" class="documentFirstHeading">
+            Title or id
+        </h1>
+
+        <div tal:define="template_id template/getId">
+        <a href=""
+           class="link-parent"
+           tal:define="parent_url python:here.navigationParent(here, template_id)"
+           tal:condition="parent_url"
+           tal:attributes="href parent_url"
+           i18n:translate="go_to_parent_url">
+        Up one level
+        </a>
+        </div>
+
+        <div tal:condition="here/category_image | nothing"
+             tal:replace="structure python:here.category_image.tag(css_class='categoryImage')" />
+        <div class="documentDescription" tal:content="here/Description">
+            description
+        </div>
+        <br clear="all" />
+
+      <div tal:define="errors options/state/getErrors|python:{};
+                       category_map here/getCategoryMap;
+                       global date_str nothing;
+                       current python:DateTime();
+                       year options/year | current/year;
+                       month options/month | current/month;
+                       day options/day | nothing;
+                       b_size here/getBatch_size | python:4;
+                       b_start request/b_start | python:0;
+                       batch python:here.getEntryInCategory(category_ids = [here.getInternal_id()],
+                                          batch=True,b_size=b_size,b_start= b_start,full_objects=False);"
+           tal:omit-tag="">
+          <tal:block repeat="catalog_obj batch">
+           <tal:block define="entry_obj catalog_obj/getObject">
+
+            <tal:block condition="python:date_str != DateTime(entry_obj.Date()).strftime('%Y%m%d')">
+                <div tal:define="global date_str python:DateTime(entry_obj.Date()).strftime('%Y%m%d')"
+                     tal:omit-tag="" />
+                <metal:block use-macro="here/cbentry_view/macros/date" />
+            </tal:block>
+
+            <metal:block use-macro="here/cbentry_view/macros/main">
+
+              <metal:block fill-slot="document_action_slot">
+                <div tal:condition="python:not repeat['catalog_obj'].index"
+                     tal:omit-tag="">
+
+                    <div tal:replace="structure provider:plone.documentactions" />
+                </div>
+              </metal:block>
+                
+              <metal:block fill-slot="next_prev_slot" />
+              <metal:block fill-slot="commentform_slot" />
+
+            </metal:block>
+           </tal:block>
+          </tal:block>
+
+        <div class="visualClear"><!-- --></div>
+
+        <!-- Batch Navigation -->
+
+        <div metal:use-macro="here/batch_macros/macros/navigation" />
+
+      </div>
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,655 @@
+# Atsushi Shibata <shibata@webcore.co.jp>, 2005
+# Aurelie Cambourian Chaumat <zopeuse@gmail.com>, 2006
+msgid ""
+msgstr ""
+"Project-Id-Version: coreblog2-fi-2\n"
+"POT-Creation-Date: 2005-09-07 16:18+0000\n"
+"PO-Revision-Date: 2006-10-06 12:48+0300\n"
+"Last-Translator: Olli\n"
+"Language-Team:  suomi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language-Code: fi\n"
+"Language-Name: Suomeksi\n"
+"Preferred-Encodings: latin9 utf-8\n"
+"Domain: plone\n"
+"X-Generator: KBabel 1.11.2\n"
+
+#
+# Portal Types
+#
+#. Default: "COREBlog2"
+#: portal type title of COREBlog2 folder
+msgid "COREBlog2"
+msgstr "COREBlog2"
+
+#. Default: "Entry"
+#: portal type title of COREBlog2 entry
+msgid "COREBlog Entry"
+msgstr "Juttu"
+
+#. Default: "Category"
+#: portal type title of COREBlog2 category
+msgid "COREBlog Category"
+msgstr "Osio"
+
+#
+# Tabs
+#
+# COREBlog2Folder
+#. Default: "Blog settings"
+#: action defined in coreblog2
+msgid "Blog settings"
+msgstr "Blogin asetukset"
+
+#. Default: "Entries"
+#: action defined in coreblog2
+msgid "Entries"
+msgstr "Jutut"
+
+#. Default: "Categories"
+#: action defined in coreblog2
+msgid "Categories"
+msgstr "Osiot"
+
+# COREBlog2Entry
+#. Default: "Comments"
+#: action defined in coreblog2entry
+msgid "Comments"
+msgstr "Kommentit"
+
+#. Default: "Trackbacks"
+#: action defined in coreblog2entry
+msgid "Trackbacks"
+msgstr "Trackbackit"
+
+#
+# Messages for blog settings
+#
+# Description for COREBlog2
+#. Default: "A root folder for COREBlog2, contains blog content, such as entries, comments, and categories"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "coreblog2folder_description"
+msgstr "COREBlog2 sisältää mm. osiot, jutut ja kommentoinnin."
+
+# Sections for Blog settings
+#. Default: "default"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "default"
+msgstr "Oletus"
+
+#. Default: "Display"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "cbsettings_display"
+msgstr "Ulkoasu"
+
+#. Default: "Entry editing"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "cbsettings_entry"
+msgstr "Juttujen ominaisuudet"
+
+#. Default: "Comments,trackbacks"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "cbsettings_comment_trackback"
+msgstr "Kommentit ja trackbackit"
+
+# BASIC settings
+#. Default: "Long description"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_long_description"
+msgstr "Kuvaus"
+
+#. Default: "A  description of your blog. This text will be displayed in the 'About portlet', and a plain text version will automatically be set as the description."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_long_description"
+msgstr "Kuvaus blogistasi. Tämä teksti näytetään 'kuvaus portaalisovelmassa'."
+
+# Advanced settings
+#. Default: "Entries per page"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_top_entry_count_setting"
+msgstr "Juttuja per sivu"
+
+#. Default: "Select the type of entry listing on the top page of your blog. If you select 'Show entries for a set number of days', all the entries you have made in a certain number of days will be displayed, with the most recent entry at the top. If you select 'Show a set number of entries', you can specify the number of entries that should be shown on the tope page."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_top_entry_count_setting"
+msgstr "Valitse juttujen näyttötapa blogissasi. Jos valitset 'Näytä aikarajan mukaan'. Kaikki jutut, jotka on julkaistu tietyn aikarajan sisällä, näytetään ensimmäisellä sivulla, uusin ensin. Jos taas valitset 'Näytä määrän mukaan', voit valita ensimmäiselle sivulle tulevien juttujen määrän."
+
+#. Default: "Show all entries for a set number of days"
+#: ./COREBlog2/contents/coreblog2.py
+#msgid "label_show_all_entries_for_a_set_number_of_days"
+#msgstr "Näytä aikarajan mukaan"
+#. Default: "Show a set number of entries"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_show_entry_in_count"
+msgstr "Näytä määrän mukaan"
+
+#. Default: "Show a set in days"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_show_entry_in_days"
+msgstr "Näytä aikarajan mukaan"
+
+#. Default: "Number of days or entries"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_top_entry_count"
+msgstr "Päivien tai juttujen määrä"
+
+#. Default: "If you have selected 'Show all entries for a set number of days' above, this number will be the number of days for which entries will be displayed on the top page. If you have selected 'Show a set number of entries' this number will be the number of entries that are shown on the top page."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_top_entry_count"
+msgstr "Jos valitsit 'Näytä juttuja päiväyksen mukaan', numero tarkoittaa päivien määrää taaksepäin, joilta juttuja otetaan etusivulle. Jos taas valitsit 'Näytä juttuja määrän mukaan', numero tarkoittaa näytettävien juttujen määrää etusivulla. "
+
+#. Default: "Items per portlet"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_portlet_item_count"
+msgstr "Juttujen otsikoiden määrä portaalisovelmassa"
+
+#. Default: "Set the number of items shown in portlets."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_portlet_item_count"
+msgstr "Aseta portaalisovelmassa näkyvien juttujen nimikkeiden määrä."
+
+#. Default: "Batch size"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_batch_size"
+msgstr "Juttuja per sivu"
+
+#. Default: "With this setting you can control the number of entries shown per page of category view, archive view, etc."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_batch_size"
+msgstr "Tällä asetuksella voit määritellä montako juttua näytetään sivulla kerrallaan, kuten osio -näkymässä."
+
+#. Default: "Trackback base URL"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_trackback_base"
+msgstr "Trackbackin WEB-osoite"
+
+#. Default: "Use this setting if you are using a special url/port to manage your blog. For example, you might be using 'https://portal/blog/' as a special url for editing your blog and you do not want this URL to be exposed to others. When trackback or ping are sent, the special url will be replaced with the URL you enter here."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_trackback_base"
+msgstr "Käytä tätä asetusta jos käytät erityistä WEB-osoitetta/porttia blogisi hallinnointiin. Esimerkiksi jos 'https://portaali/blogi/' -osoite on tarkoitettu editointiin, etkä halua sen välittyvän muille, tähän kirjoittamasi osoite sijoitetaan oikean osoitteesi tilalle. Esim. trackbackia ja pingiä käytettäessä."
+
+#. Default: "/Trackback settings"
+#: ./COREBlog2/entry_edit.cpt
+msgid "label_comment_trackback_settings"
+msgstr "Trackbackin asetukset"
+
+#. Default: "Object references"
+#: ./COREBlog2/entry_edit.cpt
+msgid "label_object_reference"
+msgstr "Lähteet"
+
+#. Default: "Ping servers"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_ping_servers"
+msgstr "Ping palvelimet"
+
+#. Default: "Set URLs of ping servers. Separate URLs with a carriage return."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_ping_servers"
+msgstr "Aseta ping palvelinten WEB-osoitteet. Erottele WEB-osoitteet rivinvaihdolla."
+
+#. Default: "Entrydate format"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_entrydate_format"
+msgstr "Päivämäärän muoto"
+
+#. Default: "Set the date format for entry dates. The format string is the same as that used by time.strftime."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_entrydate_format"
+msgstr "Aseta päivämäärän muoto. Y=vuodet, m=kuukaudet, d=päivät."
+
+#. Default: "Default format for entry body"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_body_default_format"
+msgstr "Sisällön oletusmuoto"
+
+#. Default: "Default comment status"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_allow_comment_default"
+msgstr "Kommentoinnin oletusasetus"
+
+#. Default: "Default trackback status"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_receive_trackback_default"
+msgstr "Trackbackien oletusasetus"
+
+#. Default: "Set the default format of each entry's body and extend. If you have turned on a WYSIWYG editor (kupu,etc.) in Plone's personalize settings, the setting here will be ignored and the default format will be 'HTML'."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_body_default_format"
+msgstr "Aseta oletusformaatti jokaisen jutun sisällölle ja jatkosisällölle. Jos olet asettanut WYSIWYG -editorin (kuten kupu) Plonen asetuksissa käyttöösi, tämä asetus ohitetaan ja asetetaan html oletukseksi."
+
+#. Default: "Don\'t send PING/Trackback when an entry is added"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_dont_send_ping"
+msgstr "Älä lähetä pingiä/trackbackiä kun juttu lisätään"
+
+#. Default: "Require author"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_comment_require_author"
+msgstr "Kirjoittajan nimi pakollinen"
+
+#. Default: "When cheked, people entering comments will be required to provide an author name."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_comment_require_author"
+msgstr "Kun valittu, kommenttien kirjoittajalta vaaditaan nimeä."
+
+#. Default: "Require email"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_comment_require_email"
+msgstr "Sähköpostiosoite pakollinen"
+
+#. Default: "When checked, people entering comments will be required to provide an email address."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_comment_require_email"
+msgstr "Kun valittu, kommenttien kirjoittajalta vaaditaan sähköpostiosoitetta."
+
+#. Default: "Require URL"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_comment_require_url"
+msgstr "WEB-osoite pakollinen"
+
+#. Default: "When checked, people entering comments will be required to provide a URL."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_comment_require_url"
+msgstr "Kun valittu, kommenttien kirjoittajalta vaaditaan WEB-osoitetta."
+
+#. Default: "Send a notification mail on new comment"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_send_comment_notification"
+msgstr "Lähetä sähköposti-ilmoitus uudesta kommentista"
+
+#. Default: "When checked, a nortification mail will be sent after comment added."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_send_comment_notification"
+msgstr "Kun valittu, sähköposti-ilmoitus lähetetään aina kommentin lisäyksen yhteydessä."
+
+#. Default: "Send a notification mail on new trackback"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_send_trackback_notification"
+msgstr "Lähetä sähköposti-ilmoitus uudesta trackbackista"
+
+#. Default: "When checked, a nortification mail will be sent after trackback added."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_send_trackback_notification"
+msgstr "Kun valittu, sähköposti-ilmoitus lähetetään aina trackbackin lisäyksen yhteydessä."
+
+#. Default: "Notify From"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_notify_from"
+msgstr "Ilmoitus (lähettäjä)"
+
+#. Default: "A sender address of a nortification mail. Be sure to put a vlid address."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_notify_from"
+msgstr "Ilmoittajan sähköpostiosoite. Varmista sähköpostin oikeellisuus."
+
+#. Default: "Notify To"
+#: ./COREBlog2/contents/coreblog2.py
+msgid "label_notify_to"
+msgstr "Ilmoitus (vastaanottaja)"
+
+#. Default: "Receivers address of a nortification mail. Separate multiple addresses using a comma."
+#: ./COREBlog2/contents/coreblog2.py
+msgid "help_notify_to"
+msgstr "Ilmoituksen vastaanottajan sähköpostiosoite. Erota useammat osoitteet pilkulla."
+
+#. Default: "A comment added"
+msgid "comment_notify_title"
+msgstr "Kommentti lisätty"
+
+#. Default: "EntryURL : %(entry_url)s\nTitle    : %(title)s\nAuthor   : %(author)s\nURL      : %(url)s\nPOST IP  : %(post_ip)s\nBody     :\n%(body)s\n"
+##Jutun WEB-osoite : %(entry_url)s\nNimike    : %(title)s\nKirjoittaja   : %(author)s\nWEB-osoite      : %(url)s\nPOST IP  : %(post_ip)s\nSisältö     :\n%(body)s\n
+msgid "comment_notify_body"
+msgstr "Jutun WEB-osoite : %(entry_url)s\nNimike    : %(title)s\nKirjoittaja   : %(author)s\nWEB-osoite      : %(url)s\nPOST IP  : %(post_ip)s\nSisältö     :\n%(body)s"
+
+#. Default: "A trackback added"
+msgid "trackback_notify_title"
+msgstr "Trackback lisätty"
+
+#. Default: "EntryURL : %(entry_url)s\nBlogName : %(blog_name)s\nBlogURL  : %(url)s\nPOST IP  : %(post_ip)s\nTitle    : %(title)s\nExcerpt  :\n%(excerpt)s\n"
+msgid "trackback_notify_body"
+msgstr "Jutun WEB-osoite : %(entry_url)s\nBlogin nimi : %(blog_name)s\nBlogin WEB-osoite  : %(url)s\nPOST IP  : %(post_ip)s\nNimike    : %(title)s\nLainaus  :\n%(excerpt)s"
+
+#. Default: "Entry ID"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_entry_id"
+msgstr "Jutun tunniste"
+
+#. Default: "Should not contain spaces, underscores or mixed case. A set of human readable, context descriptive words might be better."
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_entry_id"
+msgstr "Ei tulisi sisältää välilyöntejä, alaviivoja eikä erikokoisia kirjaimia. Helposti luettava teksi suositeltavaa."
+
+#. Default: "Subtitle"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_subtitle"
+msgstr "Alaotsikko"
+
+#. Default: ""
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_subtitle"
+msgstr ""
+
+#. Default: "Body"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_body"
+msgstr "Sisältö"
+
+#. Default: "The body text of the entry. You can choose the format from the menu."
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_body"
+msgstr "Jutun sisältö. Voita valita formaatin blogin asetuksista."
+
+#. Default: "Extend"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_extend"
+msgstr "Jatkokenttä"
+
+#. Default: "Extend will not be shown on the top page of the blog. It will be shown in permalink,category view etc."
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_extend"
+msgstr "Jatkokenttä ei näy sivun ja blogin alussa. Se näkyy vain linkkiä napsauttamalla."
+
+#. Default: "Category(s)"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_entry_categories"
+msgstr "Osio(t)"
+
+#. Default: ""
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_entry_categories"
+msgstr ""
+
+#. Default: Before adding entry, you have to add a category.
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_add_category"
+msgstr "Ennen jutun lisäystä täytyy luoda osio."
+
+#. Default: [ Add Category ]
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_link_for_add_category"
+msgstr "[ Lisää osio ]"
+
+#. Default: "Trackback"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_trackback"
+msgstr "Trackback"
+
+#. Default: "Trackback URLs to send. Separate URLs with a carriage return."
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_trackback"
+msgstr "Lähetettävät trackback WEB-osoitteet. Erottele osoitteet enterillä."
+
+#. Default: "Comment status"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_allow_comment"
+msgstr "Kommenttien tila"
+
+#. Default: ""
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_allow_comment"
+msgstr ""
+
+#. Default: "None (cannot add / hidden)"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_entrycommentstatus_none"
+msgstr "Ei mitään (ei voi lisätä / piilotettu)"
+
+#. Default: "Open (can add / shown)"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_entrycommentstatus_open"
+msgstr "Avoin (voi lisätä / näytetään)"
+
+#. Default: "Closed (cannot add / shown)"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_entrycommentstatus_closed"
+msgstr "Suljettu (ei voi lisätä  / näytetään )"
+
+#. Default: "Trackback status"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_receive_trackback"
+msgstr "Trackbackien tila"
+
+#. Default: ""
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_receive_trackback"
+msgstr ""
+
+#. Default: "Recent items"
+#: ./COREBlog2/entry_edit.cpt
+msgid "label_recent_items"
+msgstr "Viimeisimmät jutut"
+
+#. Default: "Insert"
+#: ./COREBlog2/entry_edit.cpt
+msgid "label_insert"
+msgstr "Lisää"
+
+#. Default: "View"
+#: ./COREBlog2/entry_edit.cpt
+msgid "label_view"
+msgstr "Näytä"
+
+#. Default: "Media position"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_position"
+msgstr "Median paikka"
+
+#. Default: "Choose position of images and other referenced media objects."
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_media_position"
+msgstr "Valitse kuvien ja muiden mediatiedostojen paikka."
+
+#. Default: "Top, horizontal"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_position_top"
+msgstr "Ylös, vaakasuora"
+
+#. Default: "Bottom, horizontal"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_position_bottom"
+msgstr "Alas, vaakasuora"
+
+#. Default: "Left, vertical"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_position_left"
+msgstr "Vasemmalle, pystysuoraan"
+
+#. Default: "Right, vertical"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_position_right"
+msgstr "Oikealle, pystysuoraan"
+
+#. Default: "Media size"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_size"
+msgstr "Median koko"
+
+#. Default: "Choose the size at which the media object (image etc.) will be shown in the entry."
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_media_size"
+msgstr "Valitse jutussa näytettävän median (kuva jne.) koko."
+
+#. Default: "Large (768,768)"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_size_large"
+msgstr "Iso (768,768)"
+
+#. Default: "Prenew (400,400)"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_size_preview"
+msgstr "Keskikokoinen (400,400)"
+
+#. Default: "Mini (200,200)"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_size_mini"
+msgstr "Pieni (200,200)"
+
+#. Default: "Thumbnail (128,128)"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_size_thumbnail"
+msgstr "Pienoiskuva (128,128)"
+
+#. Default: "Original size"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_media_size_noresize"
+msgstr "Alkuperäinen koko"
+
+# Categories
+#. Default: "Category image"
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "label_category_image"
+msgstr "Osion kuvake"
+
+#. Default: ""
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "help_category_image"
+msgstr ""
+
+#. Default: ""
+#: ./COREBlog2/contents/coreblogentry.py
+msgid "cbentry_extented_fields"
+msgstr "Jatkokenttä"
+
+#. Default: "Find entries"
+#: ./COREBlog2/entry_listing.cpt
+msgid "label_find_entries"
+msgstr "Etsi juttuja"
+
+#. Default: "Start"
+#: ./COREBlog2/entry_listing.cpt
+msgid "label_min_date"
+msgstr "Aloita"
+
+#. Default: "End"
+#: ./COREBlog2/entry_listing.cpt
+msgid "label_max_date"
+msgstr "Loppu"
+
+#
+# Messages in templates
+#
+#. Default: "posted at"
+#: ./COREBlog2/entry_document_byline.cpt
+msgid "box_posted"
+msgstr "postitettu"
+
+#. Default: "Continue reading..."
+#: ./COREBlog2/coreblog_view.cpt
+msgid "continue_reading"
+msgstr "Jatka..."
+
+#. Default: "Category(s)"
+#: ./COREBlog2/entry_view.cpt
+msgid "entry_category"
+msgstr "Osio(t)"
+
+#. Default: "The URL to Trackback this entry is:"
+#: ./COREBlog2/entry_view.cpt
+msgid "entry_trackbackurl"
+msgstr "Tämän jutun trackbackin WEB-osoite:"
+
+#. Default: "Permalink"
+#: ./COREBlog2/entry_view.cpt
+msgid "permalink"
+msgstr "Pysyvä linkki"
+
+#. Default: "Comment (${num_category})"
+#: ./COREBlog2/entry_view.cpt
+msgid "entry_comment"
+msgstr "Kommentit (${num_category})"
+
+#. Default: "Trackback (${num_trackback})"
+#: ./COREBlog2/entry_view.cpt
+msgid "entry_trackback"
+msgstr "Trackbackit (${num_trackback})"
+
+#. Default: "Main"
+#: ./COREBlog2/entry_view.cpt
+msgid "link_to_main"
+msgstr "Blogin pääsivulle"
+
+#. Default: "Remember your information on cookie?"
+#: ./COREBlog2/comment.cpt
+msgid "remember_info"
+msgstr "Tallennetaanko tietosi evästeeseen?"
+
+#. Default: "Reset Cookie"
+#: ./COREBlog2/comment.cpt
+msgid "label_reset_cookie"
+msgstr "Tyhjennä evästeet"
+
+#. Default: "Preview"
+#: ./COREBlog2/comment.cpt
+msgid "label_preview"
+msgstr "Esikatselu"
+
+#. Default: "Please enter a value"
+#: ./COREBlog2/validateComment.vpy
+msgid "Please enter a value"
+msgstr "Anna arvo"
+
+#. Default: "Parent entry"
+#: ./COREBlog2/cbcomment_view.py
+msgid "parent_entry"
+msgstr "Aiempi juttu"
+
+# portlets
+#. Default: "About this blog"
+#: ./skins/COREBlog2/portlet_about.pt
+msgid "box_about"
+msgstr "Kuvaus blogista"
+
+#. Default: "Categories"
+#: ./skins/COREBlog2/portlet_categories.pt
+msgid "box_categories"
+msgstr "Osiot"
+
+#. Default: "Recent comments"
+#: ./skins/COREBlog2/portlet_recent_comment.pt
+msgid "box_recentcomments"
+msgstr "Viimeisimmät kommentit"
+
+#. Default: "Recent entries"
+#: ./skins/COREBlog2/portlet_recent_entry.pt
+msgid "box_recententry"
+msgstr "Viimeisimmät jutut"
+
+#. Default: "Recent trackbacks"
+#: ./skins/COREBlog2/portlet_recent_trackback.pt
+msgid "box_recenttrackback"
+msgstr "Viimeisimmät trackbackit"
+
+#. Default: "Blog admin"
+#: ./skins/COREBlog2/portlet_cbadmin.pt
+msgid "box_cbadmin"
+msgstr "Blogin pääkäyttäjä"
+
+#. Default: "Add new item"
+#: ./skins/COREBlog2/portlet_cbadmin.pt
+msgid "label_adminportlet_add_new_item"
+msgstr "Lisää uusi"
+
+#. Default: "Content listing"
+#: ./skins/COREBlog2/portlet_cbadmin.pt
+msgid "label_adminportlet_content_listing"
+msgstr "Selaa sisältöä"
+
+#. Default: "Categories"
+#: ./skins/COREBlog2/portlet_cbadmin.pt
+msgid "label_categories"
+msgstr "Osiot"
+
+#. Default: "Images"
+#: ./skins/COREBlog2/portlet_cbadmin.pt
+msgid "label_images"
+msgstr "Kuvat"
+
+#. Default: "Files"
+#: ./skins/COREBlog2/portlet_cbadmin.pt
+msgid "label_files"
+msgstr "Tiedostot"
+

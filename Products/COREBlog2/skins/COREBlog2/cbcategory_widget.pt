@@ -1,0 +1,47 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="plone">
+  <head><title></title></head>
+
+  <body>
+
+    <!-- Category Widgets -->
+
+    <metal:view_macro define-macro="view">
+
+    </metal:view_macro>
+ 
+    <div metal:define-macro="edit">
+      <input type="hidden"
+         value=""
+         tal:condition="not:field/required|nothing"
+         tal:attributes="name string:$fieldName:default:list;" />
+      <div metal:use-macro="field_macro | here/widgets/field/macros/edit">
+        <div metal:fill-slot="widget_body">
+           <div class="categoryWidgetBox">
+            <ul class="categoryWidgetBlock">
+            <li tal:repeat="item python:here.getCategoryFolder().objectValues(['COREBlogCategory'])">
+            <input type="checkbox" tal:attributes="name python:fieldName+':list';
+                                                   id string:${fieldName}_${repeat/item/number};
+                                                   value item/getInternal_id;
+                                                   checked python:test(here.unicodeTestIn(item.getInternal_id(), value),
+                                                                                                     'selected',None);" />
+
+            <span tal:replace="item/title" />
+            </li>
+            </ul>
+            </div>
+          <br clear="all" />
+        </div>
+      </div>
+    </div>
+
+    <div metal:define-macro="search">
+    </div>
+
+  </body>
+
+</html>
+

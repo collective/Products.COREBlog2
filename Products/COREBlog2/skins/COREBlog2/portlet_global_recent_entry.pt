@@ -1,0 +1,40 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      i18n:domain="plone">
+
+<body>
+
+<!-- The recent entries box - searches all plone instance -->
+
+<div metal:define-macro="portlet"
+     tal:define="results python:here.portal_catalog.searchResults(portal_type='COREBlogEntry',
+                                                                  sort_on='Date',
+                                                                  sort_order='reverse')[:5];"
+     tal:condition="results">
+    <dl class="portlet" id="portlet-global-recententry">
+        <dt i18n:translate="box_recententry"
+             class="portletHeader">
+        Recent entries
+        </dt>
+        <tal:block tal:repeat="obj results">
+        <dd tal:define="oddrow repeat/obj/odd"
+            tal:attributes="class python:test(oddrow, 'portletItem even', 'portletItem odd')">
+            <a href=""
+               tal:attributes="href obj/getURL;
+                               title obj/Description">
+                <span tal:replace="obj/pretty_title_or_id">
+                Entry title
+                </span>
+            </a>
+        <span class="portletItemDetails">
+                <span class="portletItemDetails"
+                      tal:content="python:here.toLocalizedTime(obj.Date)">May 5</span>
+        </span>
+        </dd>
+        </tal:block>
+    </dl>
+</div>
+
+</body>
+
+</html>

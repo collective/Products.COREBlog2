@@ -1,0 +1,31 @@
+syntax: glob
+*~
+*.pyc
+*.pyo
+dist/*
+build/*
+images/old
+images/old/*
+*.egg-info/*
+.semantic.cache
+.DS_Store
+TAGS
+.DS_Store
+.svn
+.hg
+.hgsvn
+.as2proj
+.as3proj
+Thumbs.db
+_build
+*.pdf
+#*.swp
+.idea/*
+
+syntax: regexp
+^Paste-1\.7\.5\.1-py2\.7\.egg$
+syntax: regexp
+^PasteDeploy-1\.5\.0-py2\.7\.egg$
+syntax: regexp
+^PasteScript-1\.7\.5-py2\.7\.egg$
+

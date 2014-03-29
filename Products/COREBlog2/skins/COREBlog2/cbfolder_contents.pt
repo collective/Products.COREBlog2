@@ -1,0 +1,25 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      i18n:domain="plone"
+      metal:use-macro="here/main_template/macros/master">
+
+  <head>
+      <metal:block fill-slot="top_slot">
+        <tal:insert tal:replace="nothing"
+              tal:define="dummy python:request.set('enable_border', 1)" />
+      </metal:block>
+  </head>
+
+  <body>
+
+    <div metal:fill-slot="main"
+         tal:define="contentFilter here/getFolderContentFilter">
+    <metal:main-macro define-macro="main"
+       tal:define="tmpl nocall:here/cb_folder_contents">
+    <metal:block use-macro="tmpl/macros/contents" />
+    </metal:main-macro>
+    </div>
+
+
+  </body>
+</html>

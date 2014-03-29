@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<rolemap>
+ <permissions>
+   <permission name="COREBlog2: Add COREBlog2" acquire="True">
+     <role name="Manager" />
+     <role name="Owner" />
+     <role name="Contributor" />
+   </permission>
+   <permission name="COREBlog2: Add COREBlogEntry" acquire="True">
+     <role name="Manager" />
+     <role name="Owner" />
+     <role name="Contributor" />
+   </permission>
+   <permission name="COREBlog2: Add COREBlogCategory" acquire="True">
+     <role name="Manager" />
+     <role name="Owner" />
+     <role name="Contributor" />
+   </permission>
+   <permission name="COREBlog2: Add COREBlogCategoryFolder" acquire="True">
+     <role name="Manager" />
+     <role name="Owner" />
+     <role name="Contributor" />
+   </permission>
+   <permission name="COREBlog2: Add COREBlogComment" acquire="True">
+     <role name="Manager" />
+     <role name="Owner" />
+     <role name="Contributor" />
+   </permission>
+   <permission name="COREBlog2: Add COREBlogTrackback" acquire="True">
+     <role name="Manager" />
+     <role name="Owner" />
+     <role name="Contributor" />
+   </permission>
+ </permissions>
+</rolemap>

@@ -1,0 +1,7 @@
+Changelog
+=========
+
+0.99bdev (unreleased)
+---------------------
+
+- Support Plone 4.x [CMScom] 

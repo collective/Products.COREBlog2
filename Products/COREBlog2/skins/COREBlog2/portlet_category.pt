@@ -1,0 +1,44 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      i18n:domain="plone">
+
+<body>
+
+<!-- The categories box -->
+
+<div metal:define-macro="portlet"
+     tal:define="results python:here.portal_catalog.searchResults(portal_type='COREBlogCategory',
+                              path='/'.join(here.getCategoryFolder().getPhysicalPath()));
+                 catfolder_url python:here.getCategoryFolder().absolute_url();"
+     tal:condition="results">
+
+    <dl class="portlet" id="portlet-category">
+
+        <dt i18n:translate="box_categories"
+            class="portletHeader">
+            Categories
+        </dt>
+
+        <tal:block tal:repeat="obj results">
+        <dd class="portletItem"
+            tal:define="oddrow repeat/obj/odd;"
+            tal:attributes="class python:test(oddrow, 
+                                             'portletItem even', 
+                                             'portletItem odd');">
+            <a href="#"
+               tal:attributes="href string:${catfolder_url}/${obj/id};
+                               title obj/Description"
+               tal:content="obj/Title">
+                Category title
+            </a>
+            <span tal:replace="python:'(%s)' % here.getCategoryCount(obj.Title)" />
+        </dd>
+        </tal:block>
+
+    </dl>
+
+</div>
+
+</body>
+
+</html>

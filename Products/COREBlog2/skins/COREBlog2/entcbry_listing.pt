@@ -1,0 +1,115 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      i18n:domain="plone"
+      metal:use-macro="here/main_template/macros/master">
+
+  <head>
+      <metal:calendar fill-slot="javascript_head_slot">
+        <!-- ECMAScript calendar -->
+        <style type="text/css" media="all"
+            tal:content="string:@import url($portal_url/jscalendar/calendar-system.css);"></style>
+        <script type="text/javascript"
+            tal:attributes="src string:$portal_url/jscalendar/calendar_stripped.js"></script>
+        <script type="text/javascript" charset="iso-8859-1"
+            tal:condition="exists: portal/jscalendar/calendar-en.js"
+            tal:attributes="src string:$portal_url/jscalendar/calendar-en.js"></script>
+      </metal:calendar>      <metal:block fill-slot="top_slot">
+      <tal:insert tal:replace="nothing"
+            tal:define="dummy python:request.set('enable_border', 1)" />
+      </metal:block>
+  </head>
+
+  <body>
+
+    <div metal:fill-slot="main"
+         tal:define="contentFilter here/getEntryContentFilter;
+                     full_view nothing;">
+    <metal:main-macro define-macro="main">
+        <metal:block use-macro="here/folder_contents/macros/contents">        
+            <metal:override fill-slot="override_slot">
+            <!-- entry find form -->
+                 <dl id="entry-find-form" class="collapsible inline collapsedOnLoad"
+                     tal:attributes="class python:test(request.form.has_key('SearchableText') or
+                                                       request.form.has_key('maxDate') or
+                                                       request.form.has_key('minDate'),
+                                              'collapsible inline','collapsible inline collapsedOnLoad')">
+                   <dt i18n:translate="label_find_entries"
+                       class="collapsibleHeader">
+                   Find entries
+                   </dt>
+                   <dd class="collapsibleContent">
+                   <div>
+
+                        <div style="float:left; margin-right: 0.2em;">
+                            <label for="searchForEntries">
+                              <span i18n:translate="label_search_text">
+                              Search text
+                              </span>
+                            </label>
+                            <input div style="float:left;" id="searchForEntries"
+                                   tabindex=""
+                                   name="SearchableText"
+                                   type="text"
+                                   size="15"
+                                   value=""
+                                   title="Search Entries"
+                                   i18n:attributes="title title_search_site;"
+                                   tal:attributes="value request/SearchableText|nothing;
+                                                   tabindex tabindex/next"
+                                   class="visibility:visible" />
+                        </div>
+
+                        <div style="float:left; margin-right: 0.2em;"
+                             tal:define="formname string:minDate;
+                                         inputname string:minDate;
+                                         dts request/form/minDate | nothing;
+                                         tiv python:test(dts,dts,None);
+                                         inputvalue python:test(tiv,DateTime(tiv),None);
+                                         show_jscal python:True;
+                                         show_hm python:False;">
+                            <label for="maxDate">
+                            <span i18n:translate="label_min_date">
+                            Start
+                            </span>
+                            </label>
+                            <metal:start_date use-macro="here/calendar_macros/macros/calendarDatePickerBox|here/calendar_slot/macros/calendarDatePickerBox" />
+                        </div>
+
+                        <div style="float:left; margin-right: 0.2em;"
+                             tal:define="formname string:maxDate;
+                                         inputname string:maxDate;
+                                         dts request/form/maxDate | nothing;
+                                         tiv python:test(dts,dts,None);
+                                         inputvalue python:test(tiv,DateTime(tiv),None);
+                                         show_jscal python:True;
+                                         show_hm python:False;">
+                            <label for="maxDate">
+                            <span i18n:translate="label_max_date">
+                            End
+                            </span>
+                            </label>
+                            <metal:start_date use-macro="here/calendar_macros/macros/calendarDatePickerBox|here/calendar_slot/macros/calendarDatePickerBox" />
+                        </div>
+                    
+                        </div>
+                       <br clear="all" />
+
+                        <input class="searchButton"
+                               type="submit"
+                               tabindex=""
+                               value="Search"
+                               name="entry_listing:method"
+                               tal:attributes="tabindex tabindex/next"
+                               i18n:attributes="value label_search;" />
+                   
+
+                   </dd>
+                 </dl>            
+            </metal:override>
+        </metal:block>
+    </metal:main-macro>
+    </div>
+
+
+  </body>
+</html>

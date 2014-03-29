@@ -1,0 +1,45 @@
+/*
+** Stylesheet for COREBlog2 Widgets
+**
+** Copyright (c) 2005 Atsushi Shibata(shibata@webcore.co.jp).
+**                                       All Rights Reserved.                 
+*/
+
+/* recent items */
+.recentItemsBox {
+font-size: 80%;
+}
+
+
+/* category */
+
+.categoryWidgetBox {
+}
+
+.categoryWidgetBlock {
+list-style: none;
+list-style-image: none;
+display: block;
+text-align: left;
+}
+
+.categoryWidgetBlock li{
+display: inline;
+margin-left: 0.5em;
+float: left;
+width: 10em;
+}
+
+.floatBox {
+display: inline;
+float: left;
+width: auto;
+}
+
+.floatHalfWidth {
+width: 48%;
+}
+
+.floatNarrow {
+width: 20em;
+}

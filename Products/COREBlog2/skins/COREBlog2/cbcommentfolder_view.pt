@@ -1,0 +1,84 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US"
+      lang="en-US"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+
+  <metal:block fill-slot="top_slot"/>
+
+  <metal:block fill-slot="css_slot">
+    <style type="text/css" media="all"
+      tal:content="string:@import url(${here/blog_url}/coreblog.css);">
+    </style>
+    <style type="text/css" media="all"
+      tal:content="string:@import url(${here/blog_url}/coreblogCustom.css);">
+    </style>
+  </metal:block>
+
+  <body>
+
+    <div metal:fill-slot="main">
+      <div metal:define-macro="main"
+       tal:omit-tag="">
+
+        <div tal:replace="structure provider:plone.documentactions" />
+
+        <h1 tal:content="here/pretty_title_or_id" class="documentFirstHeading">
+            Title or id
+        </h1>
+
+        <div tal:define="template_id template/getId">
+        <a href=""
+           class="link-parent"
+           tal:define="parent_url python:here.navigationParent(here, template_id)"
+           tal:condition="parent_url"
+           tal:attributes="href parent_url"
+           i18n:translate="go_to_parent_url">
+        Up one level
+        </a>
+        </div>
+
+        <div class="documentDescription" tal:content="here/Description">
+            description
+        </div>
+
+      <div tal:define="errors options/state/getErrors|python:{};
+                       contentFilter contentFilter|request/contentFilter|python:{'sort_on':'Date','sort_order':'reverse'};
+                       category_map here/getCategoryMap;
+                       global date_str nothing;
+                       current python:DateTime();
+                       year options/year | current/year;
+                       month options/month | current/month;
+                       day options/day | nothing;
+                       b_size here/getBatch_size | python:20;
+                       b_start request/b_start | python:0;
+                       batch python:here.getFolderContents(contentFilter,batch=True, b_size=b_size);"
+           tal:omit-tag="">
+          <dl>
+          <tal:block repeat="catalog_obj batch">
+           <tal:block define="obj catalog_obj/getObject">
+             <tal:block condition="python:obj.portal_type == 'COREBlogComment'"
+                        define="comment_obj python:obj">
+        <div metal:use-macro="here/cbcomment_view/macros/summary_view" />
+             </tal:block>
+             <tal:block condition="python:obj.portal_type == 'COREBlogTrackback'"
+                        define="trackback_obj python:obj">
+        <div metal:use-macro="here/cbtrackback_view/macros/summary_view" />
+             </tal:block>
+
+
+           </tal:block>
+          </tal:block>
+          </dl>
+
+        <div class="visualClear"><!-- --></div>
+
+        <!-- Batch Navigation -->
+
+        <div metal:use-macro="here/batch_macros/macros/navigation" />
+
+      </div>
+
+      </div>
+    </div>
+  </body>
+</html>

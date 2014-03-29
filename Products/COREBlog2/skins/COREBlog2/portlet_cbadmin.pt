@@ -1,0 +1,127 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      i18n:domain="plone">
+
+<body>
+
+<!-- The placeless blog admin box -->
+
+<div metal:define-macro="portlet"
+     tal:define="template_id template/getId;
+                 normalizeString nocall:context/@@plone/normalizeString;
+                 toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+                 portal_properties context/portal_properties;
+                 site_properties context/portal_properties/site_properties;
+                 here_url context/@@plone_context_state/object_url;
+                 portal context/@@plone_portal_state/portal;
+                 isAnon context/@@plone_portal_state/anonymous;
+                 member context/@@plone_portal_state/member;
+                 mtool context/portal_membership;
+                 wtool context/portal_workflow;
+                 wf_state context/@@plone_context_state/workflow_state;
+                 default_language context/@@plone_portal_state/default_language;
+                 is_editable context/@@plone_context_state/is_editable;
+                 isContextDefaultPage context/@@plone_context_state/is_default_page;
+                 object_title context/@@plone_context_state/object_title;
+                 putils context/plone_utils;
+                 ztu modules/ZTUtils;
+                 ifacetool context/portal_interface;
+                 syntool context/portal_syndication;
+                 ck python: modules['AccessControl'].getSecurityManager().checkPermission;
+                 getIconFor nocall:putils/getIconFor;"
+     tal:condition="python: ck('Add portal content', here)">
+
+    <dl class="portlet" id="portlet-admin">
+
+        <dt i18n:translate="box_cbadmin"
+            class="portletHeader">
+           Blog admin
+        </dt>
+        <dd class="portletItem">
+            <strong i18n:translate="label_adminportlet_add_new_item">
+                Add new item
+            </strong>
+            <ul class="configlets">
+                <li tal:on-error="string:">
+                    <a href=""
+                       style="display: block;"
+                       tal:attributes="href python:here.blog_url() + '/createObject?type_name=COREBlogEntry'">
+                        <img src="" alt=""
+                             tal:attributes="src python:portal.portal_types['COREBlogEntry'].getIcon();
+                                             alt string:COREBlogEntry" />
+                        <span i18n:translate="">COREBlog Entry</span>
+                    </a>
+                </li>
+                <li tal:on-error="string:">
+                    <a href=""
+                       style="display: block;"
+                       tal:attributes="href python:here.getCategoryFolder().absolute_url() + '/createObject?type_name=COREBlogCategory'">
+                        <img src="" alt=""
+                             tal:attributes="src string:coreblogcategory_icon.gif;
+                                             alt string:COREBlogCategory" />
+                        <span i18n:translate="">COREBlog Category</span>
+                    </a>
+                </li>
+                <li tal:on-error="string:">
+                    <a href=""
+                       style="display: block;"
+                       tal:attributes="href python:here.images.absolute_url() + '/createObject?type_name=Image'">
+                        <img src="" alt=""
+                             tal:attributes="src string:image_icon.png;
+                                             alt string:Image" />
+                        <span i18n:translate="">Image</span>
+                    </a>
+                </li>
+                <li tal:on-error="string:">
+                    <a href=""
+                       style="display: block;"
+                       tal:attributes="href python:here.stuff.absolute_url() + '/createObject?type_name=File'">
+                        <img src="" alt=""
+                             tal:attributes="src string:file_icon.png;
+                                             alt string:File" />
+                        <span i18n:translate=""> File </span>
+                    </a>
+                </li>
+            </ul>
+            <strong i18n:translate="label_adminportlet_content_listing">
+                Content listing
+            </strong>
+            <ul class="configlets">
+                <li tal:on-error="string:">
+                    <a href=""
+                       style="display: block;"
+                       tal:attributes="href python:here.blog_url() + '/entry_listing'">
+                        <span i18n:translate="">Entries</span>
+                    </a>
+                </li>
+                <li tal:on-error="string:">
+                    <a href=""
+                       style="display: block;"
+                       tal:attributes="href python:here.blog_url() + '/categories/folder_contents'">
+                        <span i18n:translate="label_categories">Categories</span>
+                    </a>
+                </li>
+                <li tal:on-error="string:">
+                    <a href=""
+                       style="display: block;"
+                       tal:attributes="href python:here.blog_url() + '/images/folder_contents'">
+                        <span i18n:translate="label_images">Images</span>
+                    </a>
+                </li>
+                <li tal:on-error="string:">
+                    <a href=""
+                       style="display: block;"
+                       tal:attributes="href python:here.blog_url() + '/stuff/folder_contents'">
+                        <span i18n:translate="label_files">Files</span>
+                    </a>
+                </li>
+            </ul>
+        </dd>
+
+    </dl>
+
+</div>
+
+</body>
+
+</html>

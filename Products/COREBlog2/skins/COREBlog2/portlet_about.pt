@@ -1,0 +1,29 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      i18n:domain="plone">
+
+<body>
+
+<!-- The about box -->
+
+<div metal:define-macro="portlet">
+
+    <dl class="portlet" id="portlet-about"
+        tal:condition="here/getLong_description">
+
+        <dt i18n:translate="box_about"
+            class="portletHeader">
+            About this blog
+        </dt>
+
+        <dd class="portletItem"
+             tal:content="structure here/getLong_description">
+            Long description
+        </dd>
+    </dl>
+
+</div>
+
+</body>
+
+</html>

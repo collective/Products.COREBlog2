@@ -1,0 +1,109 @@
+<tal:block tal:define="base30 here/cbbase_edit30/macros;
+                       base20 here/cbbase_edit20/macros;
+                       base python:test(here.portal_migration.getInstanceVersionTuple()[0] == 3, base30, base20);">
+<metal:block use-macro="base/master">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+
+  <body>
+        <metal:fill fill-slot="fields">
+      <tal:block condition="python:here.portal_factory.isTemporary(here)">
+        <tal:block define="foobar1 python:here.setContentType(here.getBody_default_format(),'body');
+                             foobar2 python:here.setContentType(here.getBody_default_format(),'extend');
+                             foobar3 python:here.setAllow_comment(here.getAllow_comment_default());
+                             foobar4 python:here.setReceive_trackback(here.getReceive_trackback_default());" />
+        </tal:block>
+
+            <tal:basic_fields condition="python:fieldset == 'default'">
+                <metal:fieldMacro use-macro="python:here.widget('id', mode='edit')" />
+                <metal:fieldMacro use-macro="python:here.widget('title', mode='edit')" />
+                <metal:fieldMacro use-macro="python:here.widget('body', mode='edit')" />
+                <metal:fieldMacro use-macro="python:here.widget('entry_categories', mode='edit')" />
+                <div tal:condition="python:not here.getCategoryFolder().objectIds()"
+                     class="formHelp" id="entry_categories_help_add">
+                    <span i18n:translate="label_add_category">
+                    Before adding entry, you have to add a category.
+                    </span>
+                    <a href="#" target="blank"
+                       tal:attributes="href python:here.getCategoryFolder().absolute_url() + '/createObject?type_name=COREBlogCategory'"
+                       i18n:translate="label_link_for_add_category">
+                       [ Add Category ]
+                    </a>
+                </div>
+                <dl tal:attributes="class python:test(len(here.getSubtitle()),
+                                                      'collapsible inline',
+                                                      'collapsible inline collapsedOnLoad',)"
+                    id="trackback_url-field-wrapper" class="collapsible inline collapsedOnLoad">
+                    <dt i18n:translate="label_subtitle"
+                        class="collapsibleHeader">
+                    Subtitle
+                    </dt>
+                    <dd class="collapsibleContent">
+                        <metal:fieldMacro use-macro="python:here.widget('subtitle', mode='edit')" />
+                    </dd>
+                </dl>
+                <dl id="trackback_url-field-wrapper" class="collapsible inline collapsedOnLoad">
+                    <dt i18n:translate="label_trackback"
+                        class="collapsibleHeader">
+                    Trackback URLs
+                    </dt>
+                    <dd class="collapsibleContent">
+                        <metal:fieldMacro use-macro="python:here.widget('trackback_url', mode='edit')" />
+                        <span tal:replace="here/getSent_trackback_url" />
+                    </dd>
+                </dl>
+                <dl tal:attributes="class python:test(len(here.getRefs('relatesTo')) or request.SESSION.has_key('relUID') or len(request.get('relatedItems', '')),
+                                                      'collapsible inline',
+                                                      'collapsible inline collapsedOnLoad',)"
+                    id="objectreference-field-wrapper" class="collapsible inline collapsedOnLoad">
+                    <dt i18n:translate="label_object_reference"
+                        class="collapsibleHeader">
+                    Object references
+                    </dt>
+                    <dd class="collapsibleContent">
+    
+                        <div class="floatBox floatNarrow">
+                            <metal:fieldMacro use-macro="python:here.widget('relatedItems', mode='edit')" />
+                        </div>
+                        <div class="floatBox">
+                            <metal:fieldMacro use-macro="here/recent_items/macros/edit" />
+                        </div>
+                        <br clear="all" />
+    
+                        <div class="floatBox floatHalfWidth">
+                            <metal:fieldMacro use-macro="python:here.widget('media_position', mode='edit')" />
+                        </div>
+                        <div class="floatBox floatHalfWidth">
+                            <metal:fieldMacro use-macro="python:here.widget('media_size', mode='edit')" />
+                        </div>
+                        <br clear="all" />
+    
+                    </dd>
+                </dl>
+            </tal:basic_fields>
+            <tal:extended_fields condition="python:fieldset == 'cbentry_extented_fields'">
+                <metal:fieldMacro use-macro="python:here.widget('extend', mode='edit')" />
+                <metal:fieldMacro use-macro="python:here.widget('allow_comment', mode='edit')" />
+                <metal:fieldMacro use-macro="python:here.widget('receive_trackback', mode='edit')" />
+            </tal:extended_fields>
+            <tal:other_fields condition="python:fieldset not in ['default', 'cbentry_extented_fields']">
+                <tal:fields repeat="field python:schematas[fieldset].editableFields(here, visible_only=True)">
+                  <metal:fieldMacro use-macro="python:here.widget(field.getName(), mode='edit')" />
+                </tal:fields>
+            </tal:other_fields>
+
+        </metal:fill>
+
+  </body>
+
+</html>
+
+</metal:block>
+</tal:block>

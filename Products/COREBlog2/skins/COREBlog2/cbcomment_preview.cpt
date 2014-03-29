@@ -1,0 +1,67 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+
+  <head><title></title></head>
+
+  <metal:block fill-slot="css_slot">
+    <style type="text/css" media="all"
+      tal:content="string:@import url(${here/blog_url}/coreblog.css);">
+    </style>
+    <style type="text/css" media="all"
+      tal:content="string:@import url(${here/blog_url}/coreblogCustom.css);">
+    </style>
+  </metal:block>
+
+  <body>
+    <metal:fill fill-slot="main"
+       tal:define="entry_obj python:here">
+      <metal:main_macro define-macro="main"
+         tal:define="text entry_obj/getBody;
+                   extend entry_obj/getExtend;">
+<!--
+        <div metal:use-macro="here/document_actions/macros/document_actions">
+            Document actions (print, sendto etc)
+        </div>
+-->
+        <div tal:replace="structure provider:plone.documentactions" />
+
+        <h1 class="documentFirstHeading">
+          <a href="link_to_entry"
+             tal:attributes="href entry_obj/absolute_url"
+             tal:content="entry_obj/pretty_title_or_id" >
+          Title or id
+          </a>
+        </h1>
+
+        <h2 class="documentSubtitle"
+            tal:condition="entry_obj/getSubtitle"
+            tal:content="entry_obj/getSubtitle">
+          Subtitle
+        </h2>
+<!--
+        <div metal:use-macro="entry_obj/document_byline/macros/byline">
+          Get the byline - contains details about author and modification date.
+        </div>
+-->
+        <div tal:replace="structure provider:plone.belowcontenttitle" />
+        <tal:block condition="python:request.has_key('form.button.preview')">
+            <div class="comment"
+                 tal:define="comment_obj request">
+               <div metal:use-macro="here/cbcomment_view/macros/main" />
+            </div>
+        </tal:block>
+
+       <metal:commentslot define-slot="commentform_slot">
+            <div metal:use-macro="here/cbcomment_form/macros/commentform" />
+       </metal:commentslot>
+
+      </metal:main_macro>
+    </metal:fill>
+  </body>
+</html>

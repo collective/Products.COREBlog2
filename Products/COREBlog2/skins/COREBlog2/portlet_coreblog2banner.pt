@@ -1,0 +1,25 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      i18n:domain="plone">
+
+<body>
+
+<!-- The coreblog2 banner -->
+
+<div metal:define-macro="portlet">
+
+<a href="http://coreblog.org/">
+<span tal:replace="structure here/coreblog2banner.gif" />
+</a>
+
+<br />
+
+<a href="http://www.webcore.co.jp/">
+<span tal:replace="structure here/webcorebanner.gif" />
+</a>
+
+</div>
+
+</body>
+
+</html>

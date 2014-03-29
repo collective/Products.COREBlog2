@@ -1,0 +1,49 @@
+<tal:block tal:define="base30 here/cbbase_edit30/macros;
+                       base20 here/cbbase_edit20/macros;
+                       base python:test(here.portal_migration.getInstanceVersionTuple()[0] == 3, base30, base20);">
+<metal:block use-macro="base/master">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+  <body>
+
+    <metal:fill fill-slot="fields">
+            <tal:fields condition="python:fieldset == 'default'"
+                        repeat="field python:('id','title','long_description',)">
+              <metal:fieldMacro use-macro="python:here.widget(field, mode='edit')" />
+            </tal:fields>
+            <tal:fields condition="python:fieldset == 'cbsettings_display'"
+                        repeat="field python:('top_entry_count_setting','top_entry_count','portlet_item_count',
+                                              'batch_size','entrydate_format')">
+              <metal:fieldMacro use-macro="python:here.widget(field, mode='edit')" />
+            </tal:fields>
+            <tal:fields condition="python:fieldset == 'cbsettings_entry'"
+                        repeat="field python:('body_default_format','allow_comment_default','receive_trackback_default',
+                                              'dont_send_ping','ping_servers','trackback_base')">
+              <metal:fieldMacro use-macro="python:here.widget(field, mode='edit')" />
+            </tal:fields>
+            <tal:fields condition="python:fieldset == 'cbsettings_comment_trackback'"
+                        repeat="field python:('comment_require_author','comment_require_email',
+                                              'comment_require_url',
+                                              'send_comment_notification','send_trackback_notification',
+                                              'notify_from','notify_to')">
+              <metal:fieldMacro use-macro="python:here.widget(field, mode='edit')" />
+            </tal:fields>
+            <tal:fields condition="python:fieldset not in ['default', 'cbsettings_display', 'cbsettings_entry', 'cbsettings_comment_trackback']">
+                <tal:fields repeat="field python:schematas[fieldset].editableFields(here, visible_only=True)">
+                  <metal:fieldMacro use-macro="python:here.widget(field.getName(), mode='edit')" />
+                </tal:fields>
+            </tal:fields>
+            
+    </metal:fill>
+
+  </body>
+
+</html>
+
+</metal:block>
+</tal:block>

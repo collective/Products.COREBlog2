@@ -1,0 +1,112 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+<body>
+
+<!--
+Store collection of macros for attachment object(like PDF,zip,tgz etc.),
+defining object presentation in entry.
+A 'macro id' should be case insensitive portal_type - so file or File will go well :-).
+Some local valiables will pass from parent template
+
+entry_obj : Entry itself.
+obj : A object to be shown
+ -->
+
+<div metal:fill-slot="main">
+
+    <!-- macro for File -->
+    <metal:commentform_macro define-macro="File"
+     tal:define="size obj/getObjSize;
+                 content_type obj/get_content_type|here/Format;">
+        <h5>
+            <a href=""
+               tal:attributes="href string:${obj/absolute_url}/download">
+                <img src="#" tal:attributes="src string:${here/portal_url}/${obj/getIcon};
+                                             alt obj/Title" />
+                <span tal:replace="obj/pretty_title_or_id">
+                   Title or id
+                </span>
+            </a>
+        </h5>
+    
+        <small class="discreet">
+            <span i18n:translate="label_size">
+            Size
+            </span>
+            
+            <span tal:condition="size"
+                tal:content="size">
+            257 KB
+            </span>
+    
+            <span tal:condition="python:test(size,0,1)" i18n:translate="no_file_uploaded">
+              (No file has been uploaded yet)
+            </span>
+    
+            -
+            
+            <span i18n:translate="label_file_type">
+            File type
+            </span>
+    
+            <span tal:content="content_type">
+            Content type
+            </span>
+        </small>
+    
+        <div metal:use-macro="obj/document_byline/macros/byline">
+          Get the byline - contains details about author and modification date.
+        </div>
+    </metal:commentform_macro>
+
+    <!-- macro for others -->
+    <metal:commentform_macro define-macro="Othrers__"
+     tal:define="size obj/getObjSize;
+                 content_type obj/get_content_type|nothing;">
+        <h5>
+            <a href=""
+               tal:attributes="href string:${obj/absolute_url}/">
+                <img src="#" tal:attributes="src string:${here/portal_url}/${obj/getIcon};
+                                             alt obj/Title" />
+                <span tal:replace="obj/pretty_title_or_id">
+                   Title or id
+                </span>
+            </a>
+        </h5>
+    
+        <small class="discreet">
+            <span i18n:translate="label_size">
+            Size
+            </span>
+            
+            <span tal:condition="size"
+                tal:content="size">
+            257 KB
+            </span>
+    
+            <span tal:condition="python:test(size,0,1)" i18n:translate="no_file_uploaded">
+              (No file has been uploaded yet)
+            </span>
+    
+            -
+            
+            <span i18n:translate="label_file_type">
+            File type
+            </span>
+    
+            <span tal:content="content_type">
+            Content type
+            </span>
+        </small>
+    
+        <div metal:use-macro="obj/document_byline/macros/byline">
+          Get the byline - contains details about author and modification date.
+        </div>
+    </metal:commentform_macro>
+
+</div>
+
+</body>
+</html>
